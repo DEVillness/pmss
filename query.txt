@@ -1,0 +1,33 @@
+create database `pmss`;
+
+create table `pmss`.`tags`
+(
+    `code` nvarchar(10) not null,
+    `name` nvarchar(10) not null,
+    constraint primary key (`code`),
+    constraint unique (`name`)
+);
+
+create table `pmss`.`positions`
+(
+    `code` nvarchar(10) not null,
+    `name` nvarchar(10) not null,
+    constraint primary key (`code`),
+    constraint unique (`name`)
+);
+
+create table `pmss`.`operators`
+(
+    `name`        nvarchar(20)        not null,
+    `rank`        tinyint(1) unsigned not null,
+    `ranged_flag` boolean             not null,
+    `position`    nvarchar(10)        not null,
+    `tag1`        nvarchar(10),
+    `tag2`        nvarchar(10),
+    `tag3`        nvarchar(10),
+    constraint primary key (`name`),
+    constraint foreign key (`position`) references `pmss`.`positions` (`code`),
+    constraint foreign key (`tag1`) references `pmss`.`tags` (code),
+    constraint foreign key (`tag2`) references `pmss`.`tags` (code),
+    constraint foreign key (`tag3`) references `pmss`.`tags` (code)
+);
