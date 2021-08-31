@@ -1,6 +1,7 @@
 package net.devillness.pmss.services;
 
 import net.devillness.pmss.utils.MaterialCalculationUtil;
+import net.devillness.pmss.vos.RecruitVo;
 import org.springframework.stereotype.Service;
 
 @Service(value = "net.devillness.pmss.services.CalcService")
@@ -11,7 +12,7 @@ public class CalcService {
         MaterialCalculationUtil.Orirock.getLack();
     }
 
-    public void recruitmentCalculator() {
-
+    public void recruitmentCalculator(RecruitVo recruitVo) {
+        
     }
 }

@@ -8,22 +8,15 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/stylesheets/recruit.css">
-    <title>계산기</title>
+    <title>공개모집 계산기</title>
 </head>
 <body>
 <%@ include file="/WEB-INF/views/header.jsp" %>
 <main>
     <table class="tags">
-        <thead>
-        <tr>
-            <th>포지션</th>
-            <th>배치</th>
-            <th>등급</th>
-            <th>속성</th>
-        </tr>
-        </thead>
         <tbody>
         <tr>
+            <th>포지션</th>
             <td>
                 <span><input id="vanguard" hidden type="checkbox"><label for="vanguard">뱅가드</label></span>
                 <span><input id="guard" hidden type="checkbox"><label for="guard">가드</label></span>
@@ -34,15 +27,24 @@
                 <span><input id="supporter" hidden type="checkbox"><label for="supporter">서포터</label></span>
                 <span><input id="specialist" hidden type="checkbox"><label for="specialist">스페셜리스트</label></span>
             </td>
+        </tr>
+        <tr>
+            <th>배치</th>
             <td>
                 <span><input id="melee" hidden type="checkbox"><label for="melee">근거리</label></span>
                 <span><input id="ranged" hidden type="checkbox"><label for="ranged">원거리</label></span>
             </td>
+        </tr>
+        <tr>
+            <th>등급</th>
             <td>
                 <span><input id="starter" hidden type="checkbox"><label for="starter">신입</label></span>
                 <span><input id="senior" hidden type="checkbox"><label for="senior">특별채용</label></span>
                 <span><input id="top" hidden type="checkbox"><label for="top">고급특별채용</label></span>
             </td>
+        </tr>
+        <tr>
+            <th>속성</th>
             <td>
                 <span><input id="healing" hidden type="checkbox"><label for="healing">힐링</label></span>
                 <span><input id="dps" hidden type="checkbox"><label for="dps">딜러</label></span>
@@ -60,6 +62,12 @@
                 <span><input id="cost" hidden type="checkbox"><label for="cost">코스트+</label></span>
                 <span><input id="robot" hidden type="checkbox"><label for="robot">로봇</label></span>
             </td>
+        </tr>
+        <tr class="buttons">
+            <td colspan="2"><div>초기화</div></td>
+        </tr>
+        <tr class="buttons">
+            <td colspan="2"><div onclick="window.location.href='/recruit_calculate';">태그 검색</div></td>
         </tr>
         </tbody>
     </table>

@@ -3,24 +3,49 @@ body {
     color: white;
 }
 
-main > table.tags {
+main {
     display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
-main > table.tags > thead > tr {
-    display: inline-flex;
-    flex-direction: column;
+main > table.tags {
+    background-color: #202020;
+    padding: 0 1rem;
 }
 
-main > table.tags > tbody > tr {
-    display: inline-flex;
-    flex-direction: column;
+main > table.tags > tbody > tr:not(.buttons) {
+    line-height: 2rem;
+}
+
+main > table.tags > tbody > tr > th.buttons > input {
+    width: 100%;
 }
 
 main > table.tags > tbody > tr > td > span > label {
-    background-color: darkgrey;
+    background-color: #a9a9a9;
+    box-sizing: border-box;
+    font-size: 0.9rem;
+    padding: 0.25rem;
+}
+
+main > table.tags > tbody > tr > td > span > label:hover {
+    background-color: #7e7e7e;
 }
 
 main > table.tags > tbody > tr > td > span > input:checked + label {
     background-color: blue;
+}
+
+main > table.tags > tbody > tr.buttons > td {
+    align-items: center;
+}
+
+main > table.tags > tbody > tr.buttons > td > div {
+    text-align: center;
+    background-color: #dc143c;
+}
+
+main > table.tags > tbody > tr.buttons > td > div:hover {
+    background-color: #a50f2d;
 }
