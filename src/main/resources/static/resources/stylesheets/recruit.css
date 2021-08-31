@@ -1,0 +1,26 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+main > table.tags {
+    display: flex;
+}
+
+main > table.tags > thead > tr {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+main > table.tags > tbody > tr {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+main > table.tags > tbody > tr > td > span > label {
+    background-color: darkgrey;
+}
+
+main > table.tags > tbody > tr > td > span > input:checked + label {
+    background-color: blue;
+}
