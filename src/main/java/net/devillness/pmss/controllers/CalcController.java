@@ -21,4 +21,10 @@ public class CalcController {
         this.calcService.recruitmentCalculator(recruitVo);
         return "calc/recruit";
     }
+
+    @RequestMapping(value = "/recruit", method = RequestMethod.POST, produces = MediaType.TEXT_HTML_VALUE)
+    public String recruitPost(RecruitVo recruitVo) {
+        this.calcService.recruitmentCalculator(recruitVo);
+        return "calc/recruit";
+    }
 }
