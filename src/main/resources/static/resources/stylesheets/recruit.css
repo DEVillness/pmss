@@ -1,8 +1,3 @@
-body {
-    background-color: black;
-    color: white;
-}
-
 main {
     display: flex;
     flex-direction: row;
@@ -11,41 +6,63 @@ main {
 
 main > table.tags {
     background-color: #202020;
-    padding: 0 1rem;
+    border-radius: 0.25rem;
+    max-width: 95vw;
+    user-select: none;
 }
 
 main > table.tags > tbody > tr:not(.buttons) {
-    line-height: 2rem;
+    line-height: 225%;
 }
 
-main > table.tags > tbody > tr > th.buttons > input {
-    width: 100%;
+main > table.tags > tbody > tr > th {
+    padding: 0 0.5rem;
 }
 
 main > table.tags > tbody > tr > td > span > label {
     background-color: #a9a9a9;
+    border-radius: 0.1rem;
     box-sizing: border-box;
     font-size: 0.9rem;
-    padding: 0.25rem;
+    padding: 0.375rem;
+    transition-duration: 150ms;
 }
 
 main > table.tags > tbody > tr > td > span > label:hover {
     background-color: #7e7e7e;
+    transition-duration: 150ms;
 }
 
 main > table.tags > tbody > tr > td > span > input:checked + label {
-    background-color: deepskyblue;
-}
-
-main > table.tags > tbody > tr.buttons > td {
-    align-items: center;
+    background-color: #00bfff;
 }
 
 main > table.tags > tbody > tr.buttons > td > div {
     text-align: center;
-    background-color: #dc143c;
+    border-radius: 0.25rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
+    padding: 0.375rem 0;
 }
 
-main > table.tags > tbody > tr.buttons > td > div:hover {
+main > table.tags > tbody > tr.buttons > td > div.reset {
+    background-color: #dc143c;
+    cursor: pointer;
+    transition-duration: 150ms;
+}
+
+main > table.tags > tbody > tr.buttons > td > div.reset:hover {
     background-color: #a50f2d;
+    transition-duration: 150ms;
+}
+
+main > table.tags > tbody > tr.buttons > td > div.search {
+    background-color: #1e90ff;
+    cursor: pointer;
+    transition-duration: 150ms;
+}
+
+main > table.tags > tbody > tr.buttons > td > div.search:hover {
+    background-color: #166cbf;
+    transition-duration: 150ms;
 }

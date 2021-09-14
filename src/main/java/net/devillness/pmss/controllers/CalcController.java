@@ -17,8 +17,7 @@ public class CalcController {
     }
 
     @RequestMapping(value = "/recruit", method = RequestMethod.GET, produces = MediaType.TEXT_HTML_VALUE)
-    public String recruitGet(RecruitVo recruitVo) {
-        this.calcService.recruitmentCalculator(recruitVo);
+    public String recruitGet() {
         return "calc/recruit";
     }
 
