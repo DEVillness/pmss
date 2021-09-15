@@ -1,7 +1,10 @@
 body > header {
     background-color: #202020;
-    padding: 0.25rem;
     margin-bottom: 1rem;
+    padding: 0.25rem;
+    position: sticky;
+    width: 100%;
+    z-index: 9;
 }
 
 body > header > nav {

@@ -1,45 +1,61 @@
-body {
-    height: 100vh;
-}
-
-main {
-    height: 100%;
-}
-
-section {
+main > section {
     width: 62.5%;
     height: 100%;
-    position: absolute;
     top: 0;
+    align-items: center;
     background-size: auto 100%;
     background-repeat: no-repeat;
+    display: flex;
+    filter: brightness(0.5);
+    font-size: 3rem;
+    font-weight: 700;
+    justify-content: center;
+    position: absolute;
+    text-shadow: 0.1rem 0.1rem 0.1rem #000000;
     transition-duration: 100ms;
 }
 
-.left {
+main > section:hover {
+    width: 70%;
+    box-shadow: 0 0 2rem #000000;
+    filter: brightness(1);
+    transition-duration: 100ms;
+    z-index: 8;
+}
+
+main > section.recruit {
     left: 0;
     clip-path: polygon(0 0, 100% 0, 60% 100%, 0 100%);
     background-image: url('../images/recruit.jpg');
     background-position-x: center;
 }
 
-.left:hover {
-    width: 70%;
+main > section.recruit:hover {
     clip-path: polygon(0 0, 100% 0, 64.3% 100%, 0 100%);
-    box-shadow: 0 0 2rem #000000;
-    z-index: 9;
 }
 
-.right {
+main > section:active {
+    width: 100%;
+    clip-path: none;
+}
+
+main > section.material {
     right: 0;
     clip-path: polygon(40% 0, 100% 0%, 100% 100%, 0 100%);
     background-image: url('../images/material.jpg');
     background-position-x: center;
 }
 
-.right:hover {
-    width: 70%;
+main > section.material:hover {
     clip-path: polygon(35.7% 0, 100% 0%, 100% 100%, 0 100%);
-    box-shadow: 0 0 2rem #000000;
-    z-index: 9;
+}
+
+main > section.recruit > div {
+    user-select: none;
+    transform: translateX(-10%);
+}
+
+main > section.material > div {
+    user-select: none;
+    transform: translateX(10%);
 }

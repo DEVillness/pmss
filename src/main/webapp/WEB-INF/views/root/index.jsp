@@ -11,14 +11,17 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/stylesheets/header.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/stylesheets/index.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap">
-    <script defer src="${pageContext.request.contextPath}resources/scripts/recruit.js"></script>
     <title>PRTS Management Support System</title>
 </head>
 <body>
 <%@ include file="/WEB-INF/views/header.jsp" %>
 <main>
-    <section class="left"></section>
-    <section class="right"></section>
+    <section class="recruit" onclick="window.location.href='${pageContext.request.contextPath}/recruit'">
+        <div><nobr>공개모집</nobr></div>
+    </section>
+    <section class="material" onclick="window.location.href='${pageContext.request.contextPath}/material'">
+        <div><nobr>재료가공</nobr></div>
+    </section>
 </main>
 </body>
 </html>
