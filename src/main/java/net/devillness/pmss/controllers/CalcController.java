@@ -23,7 +23,7 @@ public class CalcController {
 
     @RequestMapping(value = "/recruit", method = RequestMethod.POST, produces = MediaType.TEXT_HTML_VALUE)
     public String recruitPost(RecruitVo recruitVo) {
-        this.calcService.recruitmentCalculator(recruitVo);
+        this.calcService.recruitCalculator(recruitVo);
         return "calc/recruit";
     }
 }

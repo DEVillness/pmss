@@ -20,7 +20,7 @@ main > section:hover {
     box-shadow: 0 0 2rem #000000;
     filter: brightness(1);
     transition-duration: 100ms;
-    z-index: 8;
+    z-index: 7;
 }
 
 main > section.recruit {
@@ -42,7 +42,7 @@ main > section:active {
 main > section.material {
     right: 0;
     clip-path: polygon(40% 0, 100% 0%, 100% 100%, 0 100%);
-    background-image: url('../images/material.jpg');
+    background-image: url('../images/material2.jpg');
     background-position-x: center;
 }
 
@@ -58,4 +58,14 @@ main > section.recruit > div {
 main > section.material > div {
     user-select: none;
     transform: translateX(10%);
+}
+
+main > img.logo {
+    width: 5rem;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    user-select: none;
+    z-index: 8;
 }

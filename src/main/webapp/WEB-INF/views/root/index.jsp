@@ -22,6 +22,7 @@
     <section class="material" onclick="window.location.href='${pageContext.request.contextPath}/material'">
         <div><nobr>재료가공</nobr></div>
     </section>
+    <img alt="PMSS" class="logo" src="resources/images/PRTS.png">
 </main>
 </body>
 </html>
