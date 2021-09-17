@@ -3,8 +3,95 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="net.devillness.pmss.mappers.ICalcMapper">
-    <select id="selectOperators" parameterType="net.devillness.pmss.vos.RecruitVo"
-            resultType="net.devillness.pmss.entities.OperatorEntity">
+    <select id="selectOperators" resultType="net.devillness.pmss.entities.OperatorEntity">
+        select `o`.`name`,
+               `o`.`rank`,
+               `o`.`position`,
+               `p`.`place`,
+               `o`.`tag`
+        from `pmss`.`operators` as `o`
+                 left join `pmss`.`positions` as `p` on `p`.`code` = `o`.`position`
+        where `rank` != 6
+          and `o`.`position` like concat('%', #{position}, '%')
+          and `p`.`place` like concat('%', #{place}, '%')
+          and (`tag1` like concat('%', #{tag1}, '%') or
+               `tag2` like concat('%', #{tag1}, '%') or
+               `tag3` like concat('%', #{tag1}, '%'))
+          and (`tag1` like concat('%', #{tag2}, '%') or
+               `tag2` like concat('%', #{tag2}, '%') or
+               `tag3` like concat('%', #{tag2}, '%'))
+          and (`tag1` like concat('%', #{tag3}, '%') or
+               `tag2` like concat('%', #{tag3}, '%') or
+               `tag3` like concat('%', #{tag3}, '%'))
+        order by `o`.`rank` desc;
+    </select>
 
+    <select id="selectStarterOperators" resultType="net.devillness.pmss.entities.OperatorEntity">
+        select `o`.`name`,
+               `o`.`rank`,
+               `o`.`position`,
+               `p`.`place`,
+               `o`.`tag`
+        from `pmss`.`operators` as `o`
+                 left join `pmss`.`positions` as `p` on `p`.`code` = `o`.`position`
+        where `rank` = 1
+          and `o`.`position` like concat('%', #{position}, '%')
+          and `p`.`place` like concat('%', #{place}, '%')
+          and (`tag1` like concat('%', #{tag1}, '%') or
+               `tag2` like concat('%', #{tag1}, '%') or
+               `tag3` like concat('%', #{tag1}, '%'))
+          and (`tag1` like concat('%', #{tag2}, '%') or
+               `tag2` like concat('%', #{tag2}, '%') or
+               `tag3` like concat('%', #{tag2}, '%'))
+          and (`tag1` like concat('%', #{tag3}, '%') or
+               `tag2` like concat('%', #{tag3}, '%') or
+               `tag3` like concat('%', #{tag3}, '%'))
+        order by `o`.`rank` desc;
+    </select>
+
+    <select id="selectSeniorOperators" resultType="net.devillness.pmss.entities.OperatorEntity">
+        select `o`.`name`,
+               `o`.`rank`,
+               `o`.`position`,
+               `p`.`place`,
+               `o`.`tag`
+        from `pmss`.`operators` as `o`
+                 left join `pmss`.`positions` as `p` on `p`.`code` = `o`.`position`
+        where `rank` = 5
+          and `o`.`position` like concat('%', #{position}, '%')
+          and `p`.`place` like concat('%', #{place}, '%')
+          and (`tag1` like concat('%', #{tag1}, '%') or
+               `tag2` like concat('%', #{tag1}, '%') or
+               `tag3` like concat('%', #{tag1}, '%'))
+          and (`tag1` like concat('%', #{tag2}, '%') or
+               `tag2` like concat('%', #{tag2}, '%') or
+               `tag3` like concat('%', #{tag2}, '%'))
+          and (`tag1` like concat('%', #{tag3}, '%') or
+               `tag2` like concat('%', #{tag3}, '%') or
+               `tag3` like concat('%', #{tag3}, '%'))
+        order by `o`.`rank` desc;
+    </select>
+
+    <select id="selectTopOperators" resultType="net.devillness.pmss.entities.OperatorEntity">
+        select `o`.`name`,
+               `o`.`rank`,
+               `o`.`position`,
+               `p`.`place`,
+               `o`.`tag`
+        from `pmss`.`operators` as `o`
+                 left join `pmss`.`positions` as `p` on `p`.`code` = `o`.`position`
+        where `rank` = 6
+          and `o`.`position` like concat('%', #{position}, '%')
+          and `p`.`place` like concat('%', #{place}, '%')
+          and (`tag1` like concat('%', #{tag1}, '%') or
+               `tag2` like concat('%', #{tag1}, '%') or
+               `tag3` like concat('%', #{tag1}, '%'))
+          and (`tag1` like concat('%', #{tag2}, '%') or
+               `tag2` like concat('%', #{tag2}, '%') or
+               `tag3` like concat('%', #{tag2}, '%'))
+          and (`tag1` like concat('%', #{tag3}, '%') or
+               `tag2` like concat('%', #{tag3}, '%') or
+               `tag3` like concat('%', #{tag3}, '%'))
+        order by `o`.`rank` desc;
     </select>
 </mapper>

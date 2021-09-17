@@ -22,14 +22,14 @@
         <tr>
             <th><nobr>포지션</nobr></th>
             <td>
-                <span><input id="vanguard" class="position" hidden type="checkbox" onchange="checkPosition()"><label for="vanguard"><nobr>뱅가드</nobr></label></span>
-                <span><input id="guard" class="position" hidden type="checkbox" onchange="checkPosition()"><label for="guard"><nobr>가드</nobr></label></span>
-                <span><input id="defender" class="position" hidden type="checkbox" onchange="checkPosition()"><label for="defender"><nobr>디펜더</nobr></label></span>
-                <span><input id="sniper" class="position" hidden type="checkbox" onchange="checkPosition()"><label for="sniper"><nobr>스나이퍼</nobr></label></span>
-                <span><input id="caster" class="position" hidden type="checkbox" onchange="checkPosition()"><label for="caster"><nobr>캐스터</nobr></label></span>
-                <span><input id="medic" class="position" hidden type="checkbox" onchange="checkPosition()"><label for="medic"><nobr>메딕</nobr></label></span>
-                <span><input id="supporter" class="position" hidden type="checkbox" onchange="checkPosition()"><label for="supporter"><nobr>서포터</nobr></label></span>
-                <span><input id="specialist" class="position" hidden type="checkbox" onchange="checkPosition()"><label for="specialist"><nobr>스페셜리스트</nobr></label></span>
+                <span><input id="vgd" class="position" hidden type="checkbox" onchange="checkPosition()"><label for="vgd"><nobr>뱅가드</nobr></label></span>
+                <span><input id="grd" class="position" hidden type="checkbox" onchange="checkPosition()"><label for="grd"><nobr>가드</nobr></label></span>
+                <span><input id="dfd" class="position" hidden type="checkbox" onchange="checkPosition()"><label for="dfd"><nobr>디펜더</nobr></label></span>
+                <span><input id="snp" class="position" hidden type="checkbox" onchange="checkPosition()"><label for="snp"><nobr>스나이퍼</nobr></label></span>
+                <span><input id="cst" class="position" hidden type="checkbox" onchange="checkPosition()"><label for="cst"><nobr>캐스터</nobr></label></span>
+                <span><input id="mdc" class="position" hidden type="checkbox" onchange="checkPosition()"><label for="mdc"><nobr>메딕</nobr></label></span>
+                <span><input id="spt" class="position" hidden type="checkbox" onchange="checkPosition()"><label for="spt"><nobr>서포터</nobr></label></span>
+                <span><input id="spc" class="position" hidden type="checkbox" onchange="checkPosition()"><label for="spc"><nobr>스페셜리스트</nobr></label></span>
                 <span><input id="position" name="position" type="hidden" value=""></span>
             </td>
         </tr>
