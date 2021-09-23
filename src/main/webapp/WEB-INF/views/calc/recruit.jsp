@@ -53,20 +53,20 @@
         <tr>
             <th><nobr>속성</nobr></th>
             <td>
+                <span><input id="cc" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="cc"><nobr>제어형</nobr></label></span>
+                <span><input id="nuker" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="nuker"><nobr>누커</nobr></label></span>
                 <span><input id="healing" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="healing"><nobr>힐링</nobr></label></span>
                 <span><input id="dps" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="dps"><nobr>딜러</nobr></label></span>
                 <span><input id="support" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="support"><nobr>지원</nobr></label></span>
-                <span><input id="area" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="area"><nobr>범위공격</nobr></label></span>
-                <span><input id="slow" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="slow"><nobr>감속</nobr></label></span>
-                <span><input id="survival" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="survival"><nobr>생존형</nobr></label></span>
-                <span><input id="defense" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="defense"><nobr>방어형</nobr></label></span>
-                <span><input id="debuff" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="debuff"><nobr>디버프</nobr></label></span>
-                <span><input id="shift" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="shift"><nobr>강제이동</nobr></label></span>
-                <span><input id="cc" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="cc"><nobr>제어형</nobr></label></span>
-                <span><input id="nuker" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="nuker"><nobr>누커</nobr></label></span>
-                <span><input id="summon" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="summon"><nobr>소환</nobr></label></span>
-                <span><input id="redeploy" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="redeploy"><nobr>쾌속부활</nobr></label></span>
                 <span><input id="cost" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="cost"><nobr>코스트+</nobr></label></span>
+                <span><input id="survival" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="survival"><nobr>생존형</nobr></label></span>
+                <span><input id="area" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="area"><nobr>범위공격</nobr></label></span>
+                <span><input id="defense" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="defense"><nobr>방어형</nobr></label></span>
+                <span><input id="slow" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="slow"><nobr>감속</nobr></label></span>
+                <span><input id="debuff" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="debuff"><nobr>디버프</nobr></label></span>
+                <span><input id="redeploy" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="redeploy"><nobr>쾌속부활</nobr></label></span>
+                <span><input id="shift" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="shift"><nobr>강제이동</nobr></label></span>
+                <span><input id="summon" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="summon"><nobr>소환</nobr></label></span>
                 <span><input id="robot" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="robot"><nobr>로봇</nobr></label></span>
                 <span><input id="tag" name="tag" type="hidden" value=""></span>
             </td>

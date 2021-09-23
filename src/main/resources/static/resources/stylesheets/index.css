@@ -61,7 +61,8 @@ main > section.material > div {
 }
 
 main > img.logo {
-    width: 5rem;
+    width: 10%;
+    min-width: 5rem;
     top: 50%;
     left: 50%;
     position: absolute;

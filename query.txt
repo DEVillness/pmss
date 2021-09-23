@@ -1,33 +1,38 @@
 create database `pmss`;
 
-create table `pmss`.`tags`
+CREATE TABLE `pmss`.`positions`
 (
-    `code` nvarchar(10) not null,
-    `name` nvarchar(10) not null,
-    constraint primary key (`code`),
-    constraint unique (`name`)
+    `code`  nvarchar(10) NOT NULL,
+    `name`  nvarchar(10) NOT NULL,
+    `place` nvarchar(10) NOT NULL,
+    constraint PRIMARY KEY (`code`),
+    constraint UNIQUE `name` (`name`)
 );
 
-create table `pmss`.`positions`
+CREATE TABLE `pmss`.`tags`
 (
-    `code` nvarchar(10) not null,
-    `name` nvarchar(10) not null,
-    constraint primary key (`code`),
-    constraint unique (`name`)
+    `code` nvarchar(10) NOT NULL,
+    `name` nvarchar(10) NOT NULL,
+    constraint PRIMARY KEY (`code`),
+    constraint UNIQUE `name` (`name`)
 );
 
-create table `pmss`.`operators`
+CREATE TABLE `pmss`.`operators`
 (
-    `name`        nvarchar(20)        not null,
-    `rank`        tinyint(1) unsigned not null,
-    `ranged_flag` boolean             not null,
-    `position`    nvarchar(10)        not null,
-    `tag1`        nvarchar(10),
-    `tag2`        nvarchar(10),
-    `tag3`        nvarchar(10),
-    constraint primary key (`name`),
-    constraint foreign key (`position`) references `pmss`.`positions` (`code`),
-    constraint foreign key (`tag1`) references `pmss`.`tags` (code),
-    constraint foreign key (`tag2`) references `pmss`.`tags` (code),
-    constraint foreign key (`tag3`) references `pmss`.`tags` (code)
+    `name`     nvarchar(20)        NOT NULL,
+    `rank`     tinyint(1) unsigned NOT NULL,
+    `position` nvarchar(10)        NOT NULL,
+    `tag1`     nvarchar(10),
+    `tag2`     nvarchar(10),
+    `tag3`     nvarchar(10),
+    `tag`      nvarchar(30),
+    constraint PRIMARY KEY (`name`),
+    CONSTRAINT FOREIGN KEY (`position`) REFERENCES `pmss`.`positions` (`code`)
+        ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT FOREIGN KEY (`tag1`) REFERENCES `pmss`.`tags` (`code`)
+        ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT FOREIGN KEY (`tag2`) REFERENCES `pmss`.`tags` (`code`)
+        ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT FOREIGN KEY (`tag3`) REFERENCES `pmss`.`tags` (`code`)
+        ON DELETE CASCADE ON UPDATE CASCADE
 );
