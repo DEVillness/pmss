@@ -3,8 +3,8 @@ package net.devillness.pmss.entities;
 public class OperatorEntity {
     protected String name;
     protected int rank;
-    protected String place;
     protected String position;
+    protected String place;
     protected String tag1;
     protected String tag2;
     protected String tag3;
@@ -25,20 +25,20 @@ public class OperatorEntity {
         this.rank = rank;
     }
 
-    public String getPlace() {
-        return place;
-    }
-
-    public void setPlace(String place) {
-        this.place = place;
-    }
-
     public String getPosition() {
         return position;
     }
 
     public void setPosition(String position) {
         this.position = position;
+    }
+
+    public String getPlace() {
+        return place;
+    }
+
+    public void setPlace(String place) {
+        this.place = place;
     }
 
     public String getTag1() {

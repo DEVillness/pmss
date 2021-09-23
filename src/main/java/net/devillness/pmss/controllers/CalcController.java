@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Controller(value = "net.devillness.pmss.controllers.CalcController")
 @RequestMapping(value = "/")
 public class CalcController {
@@ -22,8 +24,10 @@ public class CalcController {
     }
 
     @RequestMapping(value = "/recruit", method = RequestMethod.POST, produces = MediaType.TEXT_HTML_VALUE)
-    public String recruitPost(RecruitVo recruitVo) {
+    public String recruitPost(RecruitVo recruitVo,
+                              HttpServletRequest request) {
         this.calcService.recruitCalculator(recruitVo);
+        request.setAttribute("recruitVo", recruitVo);
         return "calc/recruit";
     }
 }

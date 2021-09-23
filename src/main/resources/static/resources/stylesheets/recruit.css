@@ -4,22 +4,22 @@ main {
     justify-content: center;
 }
 
-main > table.tags {
+main > form > table.tags {
     background-color: #202020;
     border-radius: 0.25rem;
     max-width: 95vw;
     user-select: none;
 }
 
-main > table.tags > tbody > tr:not(.buttons) {
+main > form > table.tags > tbody > tr:not(.buttons) {
     line-height: 225%;
 }
 
-main > table.tags > tbody > tr > th {
+main > form > table.tags > tbody > tr > th {
     padding: 0 0.5rem;
 }
 
-main > table.tags > tbody > tr > td > span > label {
+main > form > table.tags > tbody > tr > td > span > label {
     background-color: #a9a9a9;
     border-radius: 0.1rem;
     box-sizing: border-box;
@@ -28,16 +28,16 @@ main > table.tags > tbody > tr > td > span > label {
     transition-duration: 150ms;
 }
 
-main > table.tags > tbody > tr > td > span > label:hover {
+main > form > table.tags > tbody > tr > td > span > label:hover {
     background-color: #7e7e7e;
     transition-duration: 150ms;
 }
 
-main > table.tags > tbody > tr > td > span > input:checked + label {
+main > form > table.tags > tbody > tr > td > span > input:checked + label {
     background-color: #00bfff;
 }
 
-main > table.tags > tbody > tr.buttons > td > div {
+main > form > table.tags > tbody > tr.buttons > td > div {
     text-align: center;
     border-radius: 0.25rem;
     font-weight: 700;
@@ -45,24 +45,24 @@ main > table.tags > tbody > tr.buttons > td > div {
     padding: 0.375rem 0;
 }
 
-main > table.tags > tbody > tr.buttons > td > div.reset {
+main > form > table.tags > tbody > tr.buttons > td > div.reset {
     background-color: #dc143c;
     cursor: pointer;
     transition-duration: 150ms;
 }
 
-main > table.tags > tbody > tr.buttons > td > div.reset:hover {
+main > form > table.tags > tbody > tr.buttons > td > div.reset:hover {
     background-color: #a50f2d;
     transition-duration: 150ms;
 }
 
-main > table.tags > tbody > tr.buttons > td > div.search {
+main > form > table.tags > tbody > tr.buttons > td > div.search {
     background-color: #1e90ff;
     cursor: pointer;
     transition-duration: 150ms;
 }
 
-main > table.tags > tbody > tr.buttons > td > div.search:hover {
+main > form > table.tags > tbody > tr.buttons > td > div.search:hover {
     background-color: #166cbf;
     transition-duration: 150ms;
 }

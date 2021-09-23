@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html" pageEncoding="UTF-8" trimDirectiveWhitespaces="true" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--@elvariable id="recruitVo" type="net.devillness.pmss.vos.RecruitVo"--%>
 <!doctype html>
 <html lang="ko">
 <head>
@@ -17,6 +18,7 @@
 <body>
 <%@ include file="/WEB-INF/views/header.jsp" %>
 <main>
+    <form method="post">
     <table class="tags">
         <tbody>
         <tr>
@@ -75,12 +77,21 @@
             <td colspan="2"><div class="reset" onclick="resetChecked()">초기화</div></td>
         </tr>
         <tr class="buttons">
-            <td colspan="2"><div class="search" onclick="window.location.href='/recruit_calculate';">태그 검색</div></td>
+            <td colspan="2"><div class="search"><input type="submit" value="태그 검색"></div></td>
         </tr>
         </tbody>
     </table>
+    </form>
     <table class="result">
-
+        <c:forEach var="operators" items="${recruitVo.operators}">
+            <tr>
+                <td>
+                    <c:forEach var="operator" items="${operators}" varStatus="loop">
+                        <span>${operator.name}</span>
+                    </c:forEach>
+                </td>
+            </tr>
+        </c:forEach>
     </table>
 </main>
 </body>

@@ -12,21 +12,10 @@ public interface ICalcMapper {
                                      @Param("tag2") String tag2,
                                      @Param("tag3") String tag3);
 
-    OperatorEntity[] selectStarterOperators(@Param("position") String position,
-                                        @Param("place") String place,
-                                        @Param("tag1") String tag1,
-                                        @Param("tag2") String tag2,
-                                        @Param("tag3") String tag3);
-
-    OperatorEntity[] selectSeniorOperators(@Param("position") String position,
-                                        @Param("place") String place,
-                                        @Param("tag1") String tag1,
-                                        @Param("tag2") String tag2,
-                                        @Param("tag3") String tag3);
-
-    OperatorEntity[] selectTopOperators(@Param("position") String position,
-                                        @Param("place") String place,
-                                        @Param("tag1") String tag1,
-                                        @Param("tag2") String tag2,
-                                        @Param("tag3") String tag3);
+    OperatorEntity[] selectOperatorsByRank(@Param("position") String position,
+                                           @Param("place") String place,
+                                           @Param("tag1") String tag1,
+                                           @Param("tag2") String tag2,
+                                           @Param("tag3") String tag3,
+                                           @Param("rank") int rank);
 }
