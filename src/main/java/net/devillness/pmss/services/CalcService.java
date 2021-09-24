@@ -22,24 +22,23 @@ public class CalcService {
     }
 
     public void recruitCalculator(RecruitVo recruitVo) {
-        recruitVo.setOperators(new ArrayList<>());
-
         ArrayList<String> positions = new ArrayList<>(Arrays.asList(recruitVo.getPosition().split(" ")));
         ArrayList<String> places = new ArrayList<>(Arrays.asList(recruitVo.getPlace().split(" ")));
         ArrayList<String> ranks = new ArrayList<>(Arrays.asList(recruitVo.getRank().split(" ")));
         ArrayList<String> tags = new ArrayList<>(Arrays.asList(recruitVo.getTag().split(" ")));
-        positions.add("");
-        places.add("");
-        ranks.add("");
-        tags.add("");
-        System.out.println(recruitVo.getPosition());
-        System.out.println(recruitVo.getPlace());
-        System.out.println(recruitVo.getRank());
-        System.out.println(recruitVo.getTag());
-        System.out.println(places.size());
-        System.out.println(places.size());
-        System.out.println(ranks.size());
-        System.out.println(tags.size());
+
+        if (!positions.contains("")) {
+            positions.add("");
+        }
+        if (!places.contains("")) {
+            places.add("");
+        }
+        if (!ranks.contains("")) {
+            ranks.add("");
+        }
+        if (!tags.contains("")) {
+            tags.add("");
+        }
 
         ArrayList<ArrayList<String>> tagFormats = new ArrayList<>();
         tagFormats.add(RecruitCalcUtil.subset(tags, 0));
@@ -68,7 +67,7 @@ public class CalcService {
                     if (!rank.equals("")) {
                         selectable--;
                     }
-                    if(selectable >= tagFormats.size()) {
+                    if (selectable >= tagFormats.size()) {
                         formattedTags = tagFormats.get(tagFormats.size() - 1);
                     } else {
                         formattedTags = tagFormats.get(selectable);
@@ -77,16 +76,16 @@ public class CalcService {
                         String[] tagArray = tag.split(" ");
                         switch (tagArray.length) {
                             case 0:
-                                callSelectMethodByRank(recruitVo, position, place, rank, "", "", "");
+                                callSelectMethodByRank(recruitVo, tagArray, position, place, rank, "", "", "");
                                 break;
                             case 1:
-                                callSelectMethodByRank(recruitVo, position, place, rank, tagArray[0], "", "");
+                                callSelectMethodByRank(recruitVo, tagArray, position, place, rank, tagArray[0], "", "");
                                 break;
                             case 2:
-                                callSelectMethodByRank(recruitVo, position, place, rank, tagArray[0], tagArray[1], "");
+                                callSelectMethodByRank(recruitVo, tagArray, position, place, rank, tagArray[0], tagArray[1], "");
                                 break;
                             case 3:
-                                callSelectMethodByRank(recruitVo, position, place, rank, tagArray[0], tagArray[1], tagArray[2]);
+                                callSelectMethodByRank(recruitVo, tagArray, position, place, rank, tagArray[0], tagArray[1], tagArray[2]);
                                 break;
                         }
                     }
@@ -104,28 +103,47 @@ public class CalcService {
         }
     }
 
-    public void callSelectMethodByRank(RecruitVo recruitVo, String position, String place, String rank, String tag1, String tag2, String tag3) {
+    public void callSelectMethodByRank(RecruitVo recruitVo, String[] tagArray, String position, String place, String rank, String tag1, String tag2, String tag3) {
+        if (position.equals("") &&
+                place.equals("") &&
+                rank.equals("") &&
+                tag1.equals("") &&
+                tag2.equals("") &&
+                tag3.equals("")) {
+            return;
+        }
         OperatorEntity[] selectResult;
         switch (rank) {
-            case "starter":
+            case "신입":
                 selectResult = this.calcMapper.selectOperatorsByRank(position, place, tag1, tag2, tag3, 1);
                 break;
-            case "senior":
+            case "특별채용":
                 selectResult = this.calcMapper.selectOperatorsByRank(position, place, tag1, tag2, tag3, 5);
                 break;
-            case "top":
+            case "고급특별채용":
                 selectResult = this.calcMapper.selectOperatorsByRank(position, place, tag1, tag2, tag3, 6);
                 break;
             default:
                 selectResult = this.calcMapper.selectOperators(position, place, tag1, tag2, tag3);
                 break;
         }
-        for (OperatorEntity result : selectResult) {
-            System.out.println(result.getName());
+
+        ArrayList<String> selectors = new ArrayList<>();
+        if (!position.equals("")) {
+            selectors.add(position);
         }
-        if (selectResult != null) {
-            System.out.println(position + " " + place + " " + rank + " " + tag1 + " " + tag2 + " " + tag3);
-            recruitVo.appendOperators(selectResult);
+        if (!place.equals("")) {
+            selectors.add(place);
+        }
+        if (!rank.equals("")) {
+            selectors.add(rank);
+        }
+        if (tagArray.length != 1 || !tagArray[0].equals("")) {
+            selectors.addAll(Arrays.asList(tagArray));
+        }
+
+        if (selectResult.length != 0) {
+            recruitVo.appendOperators(selectors, selectResult);
         }
     }
 }

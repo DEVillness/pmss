@@ -2,6 +2,11 @@ const position = document.getElementById('position');
 const place = document.getElementById('place');
 const rank = document.getElementById('rank');
 const tag = document.getElementById('tag');
+const searchForm = document.querySelector('main > form[method="post"]');
+
+function submitForm() {
+    searchForm.submit();
+}
 
 function checkPosition() {
     let checkedPositions = "";

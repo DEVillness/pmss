@@ -19,80 +19,89 @@
 <%@ include file="/WEB-INF/views/header.jsp" %>
 <main>
     <form method="post">
-    <table class="tags">
-        <tbody>
-        <tr>
-            <th><nobr>포지션</nobr></th>
-            <td>
-                <span><input id="vgd" class="position" hidden type="checkbox" onchange="checkPosition()"><label for="vgd"><nobr>뱅가드</nobr></label></span>
-                <span><input id="grd" class="position" hidden type="checkbox" onchange="checkPosition()"><label for="grd"><nobr>가드</nobr></label></span>
-                <span><input id="dfd" class="position" hidden type="checkbox" onchange="checkPosition()"><label for="dfd"><nobr>디펜더</nobr></label></span>
-                <span><input id="snp" class="position" hidden type="checkbox" onchange="checkPosition()"><label for="snp"><nobr>스나이퍼</nobr></label></span>
-                <span><input id="cst" class="position" hidden type="checkbox" onchange="checkPosition()"><label for="cst"><nobr>캐스터</nobr></label></span>
-                <span><input id="mdc" class="position" hidden type="checkbox" onchange="checkPosition()"><label for="mdc"><nobr>메딕</nobr></label></span>
-                <span><input id="spt" class="position" hidden type="checkbox" onchange="checkPosition()"><label for="spt"><nobr>서포터</nobr></label></span>
-                <span><input id="spc" class="position" hidden type="checkbox" onchange="checkPosition()"><label for="spc"><nobr>스페셜리스트</nobr></label></span>
-                <span><input id="position" name="position" type="hidden" value=""></span>
-            </td>
-        </tr>
-        <tr>
-            <th><nobr>배치</nobr></th>
-            <td>
-                <span><input id="melee" class="place" hidden type="checkbox" onchange="checkPlace()"><label for="melee"><nobr>근거리</nobr></label></span>
-                <span><input id="ranged" class="place" hidden type="checkbox" onchange="checkPlace()"><label for="ranged"><nobr>원거리</nobr></label></span>
-                <span><input id="place" name="place" type="hidden" value=""></span>
-            </td>
-        </tr>
-        <tr>
-            <th><nobr>등급</nobr></th>
-            <td>
-                <span><input id="starter" class="rank" hidden type="checkbox" onchange="checkRank()"><label for="starter"><nobr>신입</nobr></label></span>
-                <span><input id="senior" class="rank" hidden type="checkbox" onchange="checkRank()"><label for="senior"><nobr>특별채용</nobr></label></span>
-                <span><input id="top" class="rank" hidden type="checkbox" onchange="checkRank()"><label for="top"><nobr>고급특별채용</nobr></label></span>
-                <span><input id="rank" name="rank" type="hidden" value=""></span>
-            </td>
-        </tr>
-        <tr>
-            <th><nobr>속성</nobr></th>
-            <td>
-                <span><input id="cc" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="cc"><nobr>제어형</nobr></label></span>
-                <span><input id="nuker" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="nuker"><nobr>누커</nobr></label></span>
-                <span><input id="healing" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="healing"><nobr>힐링</nobr></label></span>
-                <span><input id="dps" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="dps"><nobr>딜러</nobr></label></span>
-                <span><input id="support" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="support"><nobr>지원</nobr></label></span>
-                <span><input id="cost" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="cost"><nobr>코스트+</nobr></label></span>
-                <span><input id="survival" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="survival"><nobr>생존형</nobr></label></span>
-                <span><input id="area" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="area"><nobr>범위공격</nobr></label></span>
-                <span><input id="defense" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="defense"><nobr>방어형</nobr></label></span>
-                <span><input id="slow" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="slow"><nobr>감속</nobr></label></span>
-                <span><input id="debuff" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="debuff"><nobr>디버프</nobr></label></span>
-                <span><input id="redeploy" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="redeploy"><nobr>쾌속부활</nobr></label></span>
-                <span><input id="shift" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="shift"><nobr>강제이동</nobr></label></span>
-                <span><input id="summon" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="summon"><nobr>소환</nobr></label></span>
-                <span><input id="robot" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="robot"><nobr>로봇</nobr></label></span>
-                <span><input id="tag" name="tag" type="hidden" value=""></span>
-            </td>
-        </tr>
-        <tr class="buttons">
-            <td colspan="2"><div class="reset" onclick="resetChecked()">초기화</div></td>
-        </tr>
-        <tr class="buttons">
-            <td colspan="2"><div class="search"><input type="submit" value="태그 검색"></div></td>
-        </tr>
-        </tbody>
-    </table>
-    </form>
-    <table class="result">
-        <c:forEach var="operators" items="${recruitVo.operators}">
+        <table class="tags">
+            <tbody>
             <tr>
+                <th><nobr>포지션</nobr></th>
                 <td>
-                    <c:forEach var="operator" items="${operators}" varStatus="loop">
-                        <span>${operator.name}</span>
-                    </c:forEach>
+                    <span><input id="뱅가드" class="position" hidden type="checkbox" onchange="checkPosition()"><label for="뱅가드"><nobr>뱅가드</nobr></label></span>
+                    <span><input id="가드" class="position" hidden type="checkbox" onchange="checkPosition()"><label for="가드"><nobr>가드</nobr></label></span>
+                    <span><input id="디펜더" class="position" hidden type="checkbox" onchange="checkPosition()"><label for="디펜더"><nobr>디펜더</nobr></label></span>
+                    <span><input id="스나이퍼" class="position" hidden type="checkbox" onchange="checkPosition()"><label for="스나이퍼"><nobr>스나이퍼</nobr></label></span>
+                    <span><input id="캐스터" class="position" hidden type="checkbox" onchange="checkPosition()"><label for="캐스터"><nobr>캐스터</nobr></label></span>
+                    <span><input id="메딕" class="position" hidden type="checkbox" onchange="checkPosition()"><label for="메딕"><nobr>메딕</nobr></label></span>
+                    <span><input id="서포터" class="position" hidden type="checkbox" onchange="checkPosition()"><label for="서포터"><nobr>서포터</nobr></label></span>
+                    <span><input id="스페셜리스트" class="position" hidden type="checkbox" onchange="checkPosition()"><label for="스페셜리스트"><nobr>스페셜리스트</nobr></label></span>
+                    <span><input id="position" name="position" type="hidden" value=""></span>
                 </td>
             </tr>
-        </c:forEach>
-    </table>
+            <tr>
+                <th><nobr>배치</nobr></th>
+                <td>
+                    <span><input id="근거리" class="place" hidden type="checkbox" onchange="checkPlace()"><label for="근거리"><nobr>근거리</nobr></label></span>
+                    <span><input id="원거리" class="place" hidden type="checkbox" onchange="checkPlace()"><label for="원거리"><nobr>원거리</nobr></label></span>
+                    <span><input id="place" name="place" type="hidden" value=""></span>
+                </td>
+            </tr>
+            <tr>
+                <th><nobr>등급</nobr></th>
+                <td>
+                    <span><input id="신입" class="rank" hidden type="checkbox" onchange="checkRank()"><label for="신입"><nobr>신입</nobr></label></span>
+                    <span><input id="특별채용" class="rank" hidden type="checkbox" onchange="checkRank()"><label for="특별채용"><nobr>특별채용</nobr></label></span>
+                    <span><input id="고급특별채용" class="rank" hidden type="checkbox" onchange="checkRank()"><label for="고급특별채용"><nobr>고급특별채용</nobr></label></span>
+                    <span><input id="rank" name="rank" type="hidden" value=""></span>
+                </td>
+            </tr>
+            <tr>
+                <th><nobr>속성</nobr></th>
+                <td>
+                    <span><input id="제어형" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="제어형"><nobr>제어형</nobr></label></span>
+                    <span><input id="누커" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="누커"><nobr>누커</nobr></label></span>
+                    <span><input id="힐링" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="힐링"><nobr>힐링</nobr></label></span>
+                    <span><input id="딜러" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="딜러"><nobr>딜러</nobr></label></span>
+                    <span><input id="지원" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="지원"><nobr>지원</nobr></label></span>
+                    <span><input id="코스트+" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="코스트+"><nobr>코스트+</nobr></label></span>
+                    <span><input id="생존형" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="생존형"><nobr>생존형</nobr></label></span>
+                    <span><input id="범위공격" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="범위공격"><nobr>범위공격</nobr></label></span>
+                    <span><input id="방어형" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="방어형"><nobr>방어형</nobr></label></span>
+                    <span><input id="감속" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="감속"><nobr>감속</nobr></label></span>
+                    <span><input id="디버프" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="디버프"><nobr>디버프</nobr></label></span>
+                    <span><input id="쾌속부활" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="쾌속부활"><nobr>쾌속부활</nobr></label></span>
+                    <span><input id="강제이동" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="강제이동"><nobr>강제이동</nobr></label></span>
+                    <span><input id="소환" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="소환"><nobr>소환</nobr></label></span>
+                    <span><input id="로봇" class="tag" hidden type="checkbox" onchange="checkTag()"><label for="로봇"><nobr>로봇</nobr></label></span>
+                    <span><input id="tag" name="tag" type="hidden" value=""></span>
+                </td>
+            </tr>
+            <tr class="buttons">
+                <td colspan="2"><div class="reset" onclick="resetChecked()">초기화</div></td>
+            </tr>
+            <tr class="buttons">
+                <td colspan="2"><div class="search" onclick="submitForm();">태그 검색</div></td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+    <c:if test="${recruitVo != null}">
+        <table class="result">
+            <tbody>
+            <c:forEach var="index" items="${recruitVo.operators}">
+                <tr>
+                    <td>
+                        <c:forEach var="tag" items="${index.key}">
+                            <span>${tag}</span>
+                        </c:forEach>
+                    </td>
+                    <td class="operators">
+                        <c:forEach var="operator" items="${index.value}">
+                            <span rank="${operator.rank}">${operator.name}</span>
+                        </c:forEach>
+                    </td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+    </c:if>
 </main>
 </body>
 </html>

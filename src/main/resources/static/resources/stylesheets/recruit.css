@@ -1,12 +1,14 @@
 main {
+    align-items: center;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 main > form > table.tags {
     background-color: #202020;
     border-radius: 0.25rem;
+    margin-bottom: 1rem;
     max-width: 95vw;
     user-select: none;
 }
@@ -65,4 +67,37 @@ main > form > table.tags > tbody > tr.buttons > td > div.search {
 main > form > table.tags > tbody > tr.buttons > td > div.search:hover {
     background-color: #166cbf;
     transition-duration: 150ms;
+}
+
+main > table.result > tbody > tr {
+    background-color: #202020;
+    margin-bottom: 1rem;
+}
+
+main > table.result > tbody > tr > td.operators {
+    color: #000000;
+}
+
+main > table.result > tbody > tr > td.operators > span[rank='6'] {
+    background-color: #ff6600;
+}
+
+main > table.result > tbody > tr > td.operators > span[rank='5'] {
+    background-color: #ffae00;
+}
+
+main > table.result > tbody > tr > td.operators > span[rank='4'] {
+    background-color: #dbaedb;
+}
+
+main > table.result > tbody > tr > td.operators > span[rank='3'] {
+    background-color: #9f9f9f;
+}
+
+main > table.result > tbody > tr > td.operators > span[rank='2'] {
+    background-color: #00b2f6;
+}
+
+main > table.result > tbody > tr > td.operators > span[rank='1'] {
+    background-color: #dce537;
 }
