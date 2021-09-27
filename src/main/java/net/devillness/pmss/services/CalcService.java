@@ -101,9 +101,18 @@ public class CalcService {
                 selectable++;
             }
         }
+        //TODO: sorting hashmap
+        
     }
 
-    public void callSelectMethodByRank(RecruitVo recruitVo, String[] tagArray, String position, String place, String rank, String tag1, String tag2, String tag3) {
+    public void callSelectMethodByRank(RecruitVo recruitVo,
+                                       String[] tagArray,
+                                       String position,
+                                       String place,
+                                       String rank,
+                                       String tag1,
+                                       String tag2,
+                                       String tag3) {
         if (position.equals("") &&
                 place.equals("") &&
                 rank.equals("") &&
