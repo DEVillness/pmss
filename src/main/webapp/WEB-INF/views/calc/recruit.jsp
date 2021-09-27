@@ -21,7 +21,7 @@
     <form method="post">
         <table class="tags">
             <tbody>
-            <tr>
+            <tr class="position">
                 <th><nobr>포지션</nobr></th>
                 <td>
                     <span><input id="가드" hidden type="checkbox" onchange="checkPosition()"><label for="가드"><nobr>가드</nobr></label></span>
@@ -32,10 +32,10 @@
                     <span><input id="서포터" hidden type="checkbox" onchange="checkPosition()"><label for="서포터"><nobr>서포터</nobr></label></span>
                     <span><input id="뱅가드" hidden type="checkbox" onchange="checkPosition()"><label for="뱅가드"><nobr>뱅가드</nobr></label></span>
                     <span><input id="스페셜리스트" hidden type="checkbox" onchange="checkPosition()"><label for="스페셜리스트"><nobr>스페셜리스트</nobr></label></span>
-                    <span><input id="position" type="hidden" value=""></span>
+                    <span><input id="position" name="position" type="hidden" value=""></span>
                 </td>
             </tr>
-            <tr>
+            <tr class="place">
                 <th><nobr>배치</nobr></th>
                 <td>
                     <span><input id="근거리" hidden type="checkbox" onchange="checkPlace()"><label for="근거리"><nobr>근거리</nobr></label></span>
@@ -43,7 +43,7 @@
                     <span><input id="place" name="place" type="hidden" value=""></span>
                 </td>
             </tr>
-            <tr>
+            <tr class="rank">
                 <th><nobr>등급</nobr></th>
                 <td>
                     <span><input id="신입" hidden type="checkbox" onchange="checkRank()"><label for="신입"><nobr>신입</nobr></label></span>
@@ -52,7 +52,7 @@
                     <span><input id="rank" name="rank" type="hidden" value=""></span>
                 </td>
             </tr>
-            <tr>
+            <tr class="tags">
                 <th><nobr>속성</nobr></th>
                 <td>
                     <span><input id="제어형" hidden type="checkbox" onchange="checkTag()"><label for="제어형"><nobr>제어형</nobr></label></span>
@@ -84,17 +84,23 @@
     </form>
     <c:if test="${recruitVo != null}">
         <table class="result">
+            <thead>
+            <tr>
+                <th>태그</th>
+                <th>오퍼레이터</th>
+            </tr>
+            </thead>
             <tbody>
             <c:forEach var="index" items="${recruitVo.operators}">
                 <tr>
-                    <td>
+                    <td class="tags">
                         <c:forEach var="tag" items="${index.key}">
-                            <span>${tag}</span>
+                            <span><nobr>${tag}</nobr></span>
                         </c:forEach>
                     </td>
                     <td class="operators">
                         <c:forEach var="operator" items="${index.value}">
-                            <span rank="${operator.rank}">${operator.name}</span>
+                            <span rank="${operator.rank}"><nobr>${operator.name}</nobr></span>
                         </c:forEach>
                     </td>
                 </tr>

@@ -10,7 +10,7 @@ function submitForm() {
 
 function checkPosition() {
     let checkedPositions = "";
-    document.querySelectorAll('.position:checked').forEach(checked => {
+    document.querySelectorAll('main > form > table.tags > tbody > tr.position > td > span > input:checked').forEach(checked => {
         checkedPositions = checkedPositions + checked.id + " ";
     });
     position.value = checkedPositions;
@@ -19,7 +19,7 @@ function checkPosition() {
 
 function checkPlace() {
     let checkedPlaces = "";
-    document.querySelectorAll('.place:checked').forEach(checked => {
+    document.querySelectorAll('main > form > table.tags > tbody > tr.place > td > span > input:checked').forEach(checked => {
         checkedPlaces = checkedPlaces + checked.id + " ";
     });
     place.value = checkedPlaces;
@@ -28,7 +28,7 @@ function checkPlace() {
 
 function checkRank() {
     let checkedRank = "";
-    document.querySelectorAll('.rank:checked').forEach(checked => {
+    document.querySelectorAll('main > form > table.tags > tbody > tr.rank > td > span > input:checked').forEach(checked => {
         checkedRank = checkedRank + checked.id + " ";
     });
     rank.value = checkedRank;
@@ -37,7 +37,7 @@ function checkRank() {
 
 function checkTag() {
     let checkedTag = "";
-    document.querySelectorAll('.tag:checked').forEach(checked => {
+    document.querySelectorAll('main > form > table.tags > tbody > tr.tags > td > span > input:checked').forEach(checked => {
         checkedTag = checkedTag + checked.id + " ";
     });
     tag.value = checkedTag;
@@ -69,4 +69,6 @@ function countCheck() {
             checkbox.disabled = false;
         });
     }
+
+    searchForm.disabled = (total === 0);
 }

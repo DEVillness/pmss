@@ -40,17 +40,19 @@ public class CalcService {
             tags.add("");
         }
 
+        System.out.println(tags);
         ArrayList<ArrayList<String>> tagFormats = new ArrayList<>();
-        tagFormats.add(RecruitCalcUtil.subset(tags, 0));
+        tagFormats.add(RecruitCalcUtil.powerSet(tags, 0));
         if (tags.size() > 0) {
-            tagFormats.add(RecruitCalcUtil.subset(tags, 1));
+            tagFormats.add(RecruitCalcUtil.powerSet(tags, 1));
             if (tags.size() > 1) {
-                tagFormats.add(RecruitCalcUtil.subset(tags, 2));
+                tagFormats.add(RecruitCalcUtil.powerSet(tags, 2));
                 if (tags.size() > 2) {
-                    tagFormats.add(RecruitCalcUtil.subset(tags, 3));
+                    tagFormats.add(RecruitCalcUtil.powerSet(tags, 3));
                 }
             }
         }
+        System.out.println(tagFormats);
 
         ArrayList<String> formattedTags;
 
@@ -101,8 +103,7 @@ public class CalcService {
                 selectable++;
             }
         }
-        //TODO: sorting hashmap
-        
+        recruitVo.setOperators(RecruitCalcUtil.sortOperators(recruitVo.getOperators()));
     }
 
     public void callSelectMethodByRank(RecruitVo recruitVo,
