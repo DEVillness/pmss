@@ -5,7 +5,10 @@ const tag = document.getElementById('tag');
 const searchForm = document.querySelector('main > form[method="post"]');
 
 function submitForm() {
-    searchForm.submit();
+    let total = document.querySelectorAll('input:checked').length;
+    if (total !== 0) {
+        searchForm.submit();
+    }
 }
 
 function checkPosition() {
@@ -45,14 +48,15 @@ function checkTag() {
 }
 
 function resetChecked() {
-    document.querySelectorAll('input:checked').forEach(check => {
-        check.checked = false;
-    });
-    position.value = "";
-    place.value = "";
-    rank.value = "";
-    tag.value = "";
-    countCheck();
+    let total = document.querySelectorAll('input:checked').length;
+    if (total !== 0) {
+        searchForm.reset();
+        position.value = "";
+        place.value = "";
+        rank.value = "";
+        tag.value = "";
+        countCheck();
+    }
 }
 
 function countCheck() {
@@ -69,6 +73,4 @@ function countCheck() {
             checkbox.disabled = false;
         });
     }
-
-    searchForm.disabled = (total === 0);
 }

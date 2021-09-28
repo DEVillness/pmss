@@ -47,14 +47,33 @@ public class RecruitCalcUtil {
         int o1min = 6;
         int o2min = 6;
         for(OperatorEntity o : o1) {
-            if (o.getPseudoRank() < o1min) {
-                o1min = o.getRank();
+            if(o.getPseudoRank() != 3) {
+                if (o.getPseudoRank() < o1min) {
+                    o1min = o.getPseudoRank();
+                }
             }
         }
         for(OperatorEntity o : o2) {
-            if (o.getPseudoRank() < o2min) {
-                o2min = o.getRank();
+            if (o.getPseudoRank() != 3) {
+                if (o.getPseudoRank() < o2min) {
+                    o2min = o.getPseudoRank();
+                }
             }
+        }
+        if (o1min == o2min) {
+            for(OperatorEntity o : o1) {
+                if (o.getPseudoRank() == 3) {
+                    o1min = 3;
+                    break;
+                }
+            }
+            for(OperatorEntity o : o2) {
+                if (o.getPseudoRank() == 3) {
+                    o2min = 3;
+                    break;
+                }
+            }
+            return Integer.compare(o2min, o1min);
         }
         return Integer.compare(o2min, o1min);
     };

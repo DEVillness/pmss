@@ -10,14 +10,14 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-@Service(value = "net.devillness.pmss.services.CalcService")
-public class CalcService {
+@Service(value = "net.devillness.pmss.services.RecruitCalcService")
+public class RecruitCalcService {
     public static final int RECRUIT_MAXIMUM_SELECTED = 3;
 
     private final ICalcMapper calcMapper;
 
     @Autowired
-    public CalcService(ICalcMapper calcMapper) {
+    public RecruitCalcService(ICalcMapper calcMapper) {
         this.calcMapper = calcMapper;
     }
 
@@ -40,7 +40,6 @@ public class CalcService {
             tags.add("");
         }
 
-        System.out.println(tags);
         ArrayList<ArrayList<String>> tagFormats = new ArrayList<>();
         tagFormats.add(RecruitCalcUtil.powerSet(tags, 0));
         if (tags.size() > 0) {
@@ -52,7 +51,6 @@ public class CalcService {
                 }
             }
         }
-        System.out.println(tagFormats);
 
         ArrayList<String> formattedTags;
 
@@ -125,7 +123,7 @@ public class CalcService {
         OperatorEntity[] selectResult;
         switch (rank) {
             case "신입":
-                selectResult = this.calcMapper.selectOperatorsByRank(position, place, tag1, tag2, tag3, 1);
+                selectResult = this.calcMapper.selectOperatorsByRank(position, place, tag1, tag2, tag3, 2);
                 break;
             case "특별채용":
                 selectResult = this.calcMapper.selectOperatorsByRank(position, place, tag1, tag2, tag3, 5);

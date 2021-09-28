@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html" pageEncoding="UTF-8" trimDirectiveWhitespaces="true" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--@elvariable id="recruitVo" type="net.devillness.pmss.vos.RecruitVo"--%>
+<%--@elvariable id="operators" type="net.devillness.pmss.entities.OperatorEntity"--%>
 <!doctype html>
 <html lang="ko">
 <head>
@@ -25,8 +25,8 @@
                 <th><nobr>포지션</nobr></th>
                 <td>
                     <span><input id="가드" hidden type="checkbox" onchange="checkPosition()"><label for="가드"><nobr>가드</nobr></label></span>
-                    <span><input id="디펜더" hidden type="checkbox" onchange="checkPosition()"><label for="디펜더"><nobr>디펜더</nobr></label></span>
                     <span><input id="스나이퍼" hidden type="checkbox" onchange="checkPosition()"><label for="스나이퍼"><nobr>스나이퍼</nobr></label></span>
+                    <span><input id="디펜더" hidden type="checkbox" onchange="checkPosition()"><label for="디펜더"><nobr>디펜더</nobr></label></span>
                     <span><input id="캐스터" hidden type="checkbox" onchange="checkPosition()"><label for="캐스터"><nobr>캐스터</nobr></label></span>
                     <span><input id="메딕" hidden type="checkbox" onchange="checkPosition()"><label for="메딕"><nobr>메딕</nobr></label></span>
                     <span><input id="서포터" hidden type="checkbox" onchange="checkPosition()"><label for="서포터"><nobr>서포터</nobr></label></span>
@@ -82,7 +82,7 @@
             </tbody>
         </table>
     </form>
-    <c:if test="${recruitVo != null}">
+    <c:if test="${operators != null}">
         <table class="result">
             <thead>
             <tr>
@@ -91,7 +91,7 @@
             </tr>
             </thead>
             <tbody>
-            <c:forEach var="index" items="${recruitVo.operators}">
+            <c:forEach var="index" items="${operators}">
                 <tr>
                     <td class="tags">
                         <c:forEach var="tag" items="${index.key}">
