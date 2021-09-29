@@ -27,9 +27,9 @@
                     <span><input id="가드" hidden type="checkbox" onchange="checkPosition()"><label for="가드"><nobr>가드</nobr></label></span>
                     <span><input id="스나이퍼" hidden type="checkbox" onchange="checkPosition()"><label for="스나이퍼"><nobr>스나이퍼</nobr></label></span>
                     <span><input id="디펜더" hidden type="checkbox" onchange="checkPosition()"><label for="디펜더"><nobr>디펜더</nobr></label></span>
+                    <span><input id="서포터" hidden type="checkbox" onchange="checkPosition()"><label for="서포터"><nobr>서포터</nobr></label></span>
                     <span><input id="캐스터" hidden type="checkbox" onchange="checkPosition()"><label for="캐스터"><nobr>캐스터</nobr></label></span>
                     <span><input id="메딕" hidden type="checkbox" onchange="checkPosition()"><label for="메딕"><nobr>메딕</nobr></label></span>
-                    <span><input id="서포터" hidden type="checkbox" onchange="checkPosition()"><label for="서포터"><nobr>서포터</nobr></label></span>
                     <span><input id="뱅가드" hidden type="checkbox" onchange="checkPosition()"><label for="뱅가드"><nobr>뱅가드</nobr></label></span>
                     <span><input id="스페셜리스트" hidden type="checkbox" onchange="checkPosition()"><label for="스페셜리스트"><nobr>스페셜리스트</nobr></label></span>
                     <span><input id="position" name="position" type="hidden" value=""></span>

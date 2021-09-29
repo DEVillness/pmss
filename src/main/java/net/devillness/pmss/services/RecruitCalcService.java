@@ -42,13 +42,11 @@ public class RecruitCalcService {
 
         ArrayList<ArrayList<String>> tagFormats = new ArrayList<>();
         tagFormats.add(RecruitCalcUtil.powerSet(tags, 0));
-        if (tags.size() > 0) {
-            tagFormats.add(RecruitCalcUtil.powerSet(tags, 1));
-            if (tags.size() > 1) {
-                tagFormats.add(RecruitCalcUtil.powerSet(tags, 2));
-                if (tags.size() > 2) {
-                    tagFormats.add(RecruitCalcUtil.powerSet(tags, 3));
-                }
+        for (int i = 0; i < RECRUIT_MAXIMUM_SELECTED; i++) {
+            if (tags.size() > i) {
+                tagFormats.add(RecruitCalcUtil.powerSet(tags,i+1));
+            } else {
+                break;
             }
         }
 
