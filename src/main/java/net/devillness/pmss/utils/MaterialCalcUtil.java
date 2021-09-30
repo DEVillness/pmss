@@ -1,6 +1,6 @@
 package net.devillness.pmss.utils;
 
-public class MaterialCalculationUtil {
+public class MaterialCalcUtil {
     public static class Material {
         private static int count = 0;
         private static int have = 0;

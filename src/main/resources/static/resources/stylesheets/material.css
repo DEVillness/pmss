@@ -1,0 +1,38 @@
+main > section.rank {
+    border-bottom: solid 0.1rem #a9a9a9;
+    margin: 1rem;
+}
+
+main > section.rank > div.commodity {
+    background-color: #7e7e7e;
+    border-radius: 1rem;
+    display: inline-flex;
+    flex-direction: row;
+    padding: 1rem;
+    margin: 1rem;
+    max-width: 30vw;
+}
+
+main > section.rank > div.commodity > img {
+    margin-right: 1rem;
+    align-self: center;
+}
+
+main > section.rank > div.commodity > div {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+main > section.rank > div.commodity > div > input {
+    width: 4rem;
+}
+
+main > section.rank > div.commodity > div > input[disabled='disabled'] {
+    background-color: #ffffff;
+}
+
+main > section.rank > div.commodity > div > input:not(:last-child) {
+    margin-bottom: 0.25rem;
+}

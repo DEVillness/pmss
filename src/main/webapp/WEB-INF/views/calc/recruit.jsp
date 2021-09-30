@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/stylesheets/header.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/stylesheets/recruit.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap">
-    <script defer src="${pageContext.request.contextPath}resources/scripts/recruit.js"></script>
+    <script defer src="${pageContext.request.contextPath}/resources/scripts/recruit.js"></script>
     <title>공개모집 계산기</title>
 </head>
 <body>

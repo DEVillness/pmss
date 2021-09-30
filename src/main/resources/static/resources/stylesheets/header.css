@@ -4,6 +4,7 @@ body > header {
     margin-bottom: 1rem;
     padding: 0.25rem;
     position: sticky;
+    user-select: none;
     width: 100%;
     z-index: 9;
 }
@@ -23,7 +24,7 @@ body > header > nav > div {
     justify-content: center;
 }
 
-body > header > nav > div > img {
+body > header > nav > div.home > a > img {
     height: 2.5rem;
     margin-right: 0.5rem;
     cursor: pointer;
@@ -34,7 +35,7 @@ body > header > nav > div.links {
     flex-direction: row;
 }
 
-body > header > nav > div.links > div {
+body > header > nav > div.links > a {
     background-color: #7e7e7e;
     border-radius: 0.5rem;
     cursor: pointer;
