@@ -3,7 +3,6 @@ package net.devillness.pmss.entities;
 public class OperatorEntity {
     protected String name;
     protected int rank;
-    protected int pseudoRank;
     protected String position;
     protected String place;
     protected String tag1;
@@ -24,14 +23,6 @@ public class OperatorEntity {
 
     public void setRank(int rank) {
         this.rank = rank;
-    }
-
-    public int getPseudoRank() {
-        return pseudoRank;
-    }
-
-    public void setPseudoRank(int pseudoRank) {
-        this.pseudoRank = pseudoRank;
     }
 
     public String getPosition() {

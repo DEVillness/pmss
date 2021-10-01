@@ -1,17 +1,99 @@
-const inputs = document.querySelectorAll('main > section.rank > div.commodity > div > input');
-const commodities = document.querySelectorAll('div.commodity');
+const inputs = document.querySelectorAll('main > section.calc > section.rank > div.commodity > div > input');
+
+const d32Input = document.getElementById('d32').querySelectorAll('input');
+const bipolarInput = document.getElementById('bipolar').querySelectorAll('input');
+const polymerizerInput = document.getElementById('polymerizer').querySelectorAll('input');
+const crystalline5Input = document.getElementById('crystalline5').querySelectorAll('input');
+const device4Input = document.getElementById('device4').querySelectorAll('input');
+const ketone4Input = document.getElementById('ketone4').querySelectorAll('input');
+const oriron4Input = document.getElementById('oriron4').querySelectorAll('input');
+const ester4Input = document.getElementById('ester4').querySelectorAll('input');
+const sugar4Input = document.getElementById('sugar4').querySelectorAll('input');
+const orirock4Input = document.getElementById('orirock4').querySelectorAll('input');
+const kohl4Input = document.getElementById('kohl4').querySelectorAll('input');
+const grindstone4Input = document.getElementById('grindstone4').querySelectorAll('input');
+const manganese4Input = document.getElementById('manganese4').querySelectorAll('input');
+const rma4Input = document.getElementById('rma4').querySelectorAll('input');
+const alloy4Input = document.getElementById('alloy4').querySelectorAll('input');
+const gel4Input = document.getElementById('gel4').querySelectorAll('input');
+const crystalline4Input = document.getElementById('crystalline4').querySelectorAll('input');
+const device3Input = document.getElementById('device3').querySelectorAll('input');
+const ketone3Input = document.getElementById('ketone3').querySelectorAll('input');
+const oriron3Input = document.getElementById('oriron3').querySelectorAll('input');
+const ester3Input = document.getElementById('ester3').querySelectorAll('input');
+const sugar3Input = document.getElementById('sugar3').querySelectorAll('input');
+const orirock3Input = document.getElementById('orirock3').querySelectorAll('input');
+const kohl3Input = document.getElementById('kohl3').querySelectorAll('input');
+const grindstone3Input = document.getElementById('grindstone3').querySelectorAll('input');
+const manganese3Input = document.getElementById('manganese3').querySelectorAll('input');
+const rma3Input = document.getElementById('rma3').querySelectorAll('input');
+const alloy3Input = document.getElementById('alloy3').querySelectorAll('input');
+const gel3Input = document.getElementById('gel3').querySelectorAll('input');
+const crystalline3Input = document.getElementById('crystalline3').querySelectorAll('input');
+const device2Input = document.getElementById('device2').querySelectorAll('input');
+const ketone2Input = document.getElementById('ketone2').querySelectorAll('input');
+const oriron2Input = document.getElementById('oriron2').querySelectorAll('input');
+const ester2Input = document.getElementById('ester2').querySelectorAll('input');
+const sugar2Input = document.getElementById('sugar2').querySelectorAll('input');
+const orirock2Input = document.getElementById('orirock2').querySelectorAll('input');
+const device1Input = document.getElementById('device1').querySelectorAll('input');
+const ketone1Input = document.getElementById('ketone1').querySelectorAll('input');
+const oriron1Input = document.getElementById('oriron1').querySelectorAll('input');
+const ester1Input = document.getElementById('ester1').querySelectorAll('input');
+const sugar1Input = document.getElementById('sugar1').querySelectorAll('input');
+const orirock1Input = document.getElementById('orirock1').querySelectorAll('input');
 
 inputs.forEach(i => {
     i.onchange = refresh;
 });
 
 function refresh(event) {
-    commodities.forEach(commodity => {
-        let inputs = commodity.querySelectorAll('input');
-        inputs[2].value = positive(Number(inputs[0].value) - Number(inputs[1].value));
-    });
+    d32Input[2].value = positive(d32Input[0].value - d32Input[1].value);
+    bipolarInput[2].value = positive(bipolarInput[0].value - bipolarInput[1].value);
+    polymerizerInput[2].value = positive(polymerizerInput[0].value - polymerizerInput[1].value);
+    crystalline5Input[2].value = positive(crystalline5Input[0].value - crystalline5Input[1].value);
+    device4Input[2].value = positive(device4Input[0].value - device4Input[1].value + bipolarInput[2].value);
+    ketone4Input[2].value = positive(ketone4Input[0].value - ketone4Input[1].value + polymerizerInput[2].value);
+    oriron4Input[2].value = positive(oriron4Input[0].value - oriron4Input[1].value + polymerizerInput[2].value);
+    ester4Input[2].value = positive(ester4Input[0].value - ester4Input[1].value);
+    sugar4Input[2].value = positive(sugar4Input[0].value - sugar4Input[1].value);
+    orirock4Input[2].value = positive(orirock4Input[0].value - orirock4Input[1].value + polymerizerInput[2].value);
+    kohl4Input[2].value = positive(kohl4Input[0].value - kohl4Input[1].value + bipolarInput[2].value * 2);
+    grindstone4Input[2].value = positive(grindstone4Input[0].value - grindstone4Input[1].value + d32Input[2].value);
+    manganese4Input[2].value = positive(manganese4Input[0].value - manganese4Input[1].value + d32Input[2].value);
+    rma4Input[2].value = positive(rma4Input[0].value - rma4Input[1].value + d32Input[2].value);
+    alloy4Input[2].value = positive(alloy4Input[0].value - alloy4Input[1].value + crystalline5Input[2].value);
+    gel4Input[2].value = positive(gel4Input[0].value - gel4Input[1].value + crystalline5Input[2].value * 2);
+    crystalline4Input[2].value = positive(crystalline4Input[0].value - crystalline4Input[1].value + crystalline5Input[2].value);
+    device3Input[2].value = positive(device3Input[0].value - device3Input[1].value + device4Input[2].value + oriron4Input[2].value + grindstone4Input[2].value + alloy4Input[2].value);
+    ketone3Input[2].value = positive(ketone3Input[0].value - ketone3Input[1].value + ketone4Input[2].value * 2 + ester4Input[2].value + rma4Input[2].value);
+    oriron3Input[2].value = positive(oriron3Input[0].value - oriron3Input[1].value + oriron4Input[2].value * 2 + sugar4Input[2].value + grindstone4Input[2].value + gel4Input[2].value);
+    ester3Input[2].value = positive(ester3Input[0].value - ester3Input[1].value + oriron4Input[2].value + ester4Input[2].value * 2 + manganese4Input[2].value);
+    sugar3Input[2].value = positive(sugar3Input[0].value - sugar3Input[1].value + sugar4Input[2].value * 2 + kohl4Input[2].value);
+    orirock3Input[2].value = positive(orirock3Input[0].value - orirock3Input[1].value + device4Input[2].value * 2 + orirock4Input[2].value * 4 + rma4Input[2].value * 2);
+    kohl3Input[2].value = positive(kohl3Input[0].value - kohl3Input[1].value + ester4Input[2].value + kohl4Input[2].value + manganese4Input[2].value);
+    grindstone3Input[2].value = positive(grindstone3Input[0].value - grindstone3Input[1].value + device4Input[2].value + grindstone4Input[2].value + alloy4Input[2].value);
+    manganese3Input[2].value = positive(manganese3Input[0].value - manganese3Input[1].value + ketone4Input[2].value + sugar4Input[2].value + manganese4Input[2].value + 2);
+    rma3Input[2].value = positive(rma3Input[0].value - rma3Input[1].value + kohl4Input[2].value + rma4Input[2].value);
+    alloy3Input[2].value = positive(alloy3Input[0].value - alloy3Input[1].value + alloy4Input[2].value + gel4Input[2].value + crystalline4Input[2].value);
+    gel3Input[2].value = positive(gel3Input[0].value - gel3Input[1].value + gel4Input[2].value + crystalline4Input[2].value);
+    crystalline3Input[2].value = positive(crystalline3Input[0].value - crystalline3Input[1].value + crystalline4Input[2].value * 2);
+    Input[2].value = positive(Input[0].value - Input[1].value);
+    Input[2].value = positive(Input[0].value - Input[1].value);
+    Input[2].value = positive(Input[0].value - Input[1].value);
+    Input[2].value = positive(Input[0].value - Input[1].value);
+    Input[2].value = positive(Input[0].value - Input[1].value);
+    Input[2].value = positive(Input[0].value - Input[1].value);
+    Input[2].value = positive(Input[0].value - Input[1].value);
+    Input[2].value = positive(Input[0].value - Input[1].value);
+    Input[2].value = positive(Input[0].value - Input[1].value);
+    Input[2].value = positive(Input[0].value - Input[1].value);
+    Input[2].value = positive(Input[0].value - Input[1].value);
+    Input[2].value = positive(Input[0].value - Input[1].value);
+    Input[2].value = positive(Input[0].value - Input[1].value);
+    Input[2].value = positive(Input[0].value - Input[1].value);
 }
 
 function positive(val) {
-    return String(val < 0 ? 0 : val);
+    return String(val <= 0 ? 0 : val);
 }

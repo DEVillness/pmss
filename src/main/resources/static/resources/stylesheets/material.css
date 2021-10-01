@@ -1,38 +1,57 @@
-main > section.rank {
-    border-bottom: solid 0.1rem #bfbfbf;
-    margin: 1rem;
+main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
-main > section.rank > div.commodity {
+main > section {
+    width: 50vw;
+}
+
+main > section.calc > section.rank {
+    border-bottom: solid 0.1rem #bfbfbf;
+}
+
+main > section.calc > section.rank > div.commodity {
     background-color: #7f7f7f;
     border-radius: 1rem;
     display: inline-flex;
     flex-direction: row;
-    padding: 1rem;
     margin: 1rem;
     max-width: 30vw;
+    padding: 1rem;
+    justify-content: space-evenly;
 }
 
-main > section.rank > div.commodity > img {
-    margin-right: 1rem;
-    align-self: center;
-}
-
-main > section.rank > div.commodity > div {
+main > section.calc > section.rank > div.commodity > div {
     align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-main > section.rank > div.commodity > div > input {
+main > section.calc > section.rank > div.commodity > div.image {
+    width: 50px;
+    height: 50px;
+    margin-right: 1rem;
+    align-self: center;
+}
+
+main > section.calc > section.rank > div.commodity > div > input {
     width: 4rem;
 }
 
-main > section.rank > div.commodity > div > input[disabled='disabled'] {
+main > section.calc > section.rank > div.commodity > div > input[disabled='disabled'] {
     background-color: #ffffff;
 }
 
-main > section.rank > div.commodity > div > input:not(:last-child) {
+main > section.calc > section.rank > div.commodity > div > input:not(:last-child) {
     margin-bottom: 0.25rem;
+}
+
+@media (max-width: 50rem) {
+    main > section  {
+        width: 90vw;
+    }
 }

@@ -6,7 +6,6 @@
     <select id="selectOperators" resultType="net.devillness.pmss.entities.OperatorEntity">
         select `o`.`name`        as `name`,
                `o`.`rank`        as `rank`,
-               `o`.`pseudo_rank` as `pseudoRank`,
                `o`.`position`    as `position`,
                `p`.`place`       as `place`,
                `o`.`tag1`        as `tag1`,
@@ -32,7 +31,6 @@
     <select id="selectOperatorsByRank" resultType="net.devillness.pmss.entities.OperatorEntity">
         select `o`.`name`        as `name`,
                `o`.`rank`        as `rank`,
-               `o`.`pseudo_rank` as `pseudoRank`,
                `o`.`position`    as `position`,
                `p`.`place`       as `place`,
                `o`.`tag1`        as `tag1`,
