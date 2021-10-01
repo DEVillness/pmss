@@ -15,17 +15,17 @@
         from `pmss`.`operators` as `o`
                  left join `pmss`.`positions` as `p` on `p`.`code` = `o`.`position`
         where `o`.`rank` != 6
-          and `o`.`position` like concat('%', #{position}, '%')
-          and `p`.`place` like concat('%', #{place}, '%')
-          and (`o`.`tag1` like concat('%', #{tag1}, '%') or
-               `o`.`tag2` like concat('%', #{tag1}, '%') or
-               `o`.`tag3` like concat('%', #{tag1}, '%'))
-          and (`o`.`tag1` like concat('%', #{tag2}, '%') or
-               `o`.`tag2` like concat('%', #{tag2}, '%') or
-               `o`.`tag3` like concat('%', #{tag2}, '%'))
-          and (`o`.`tag1` like concat('%', #{tag3}, '%') or
-               `o`.`tag2` like concat('%', #{tag3}, '%') or
-               `o`.`tag3` like concat('%', #{tag3}, '%'))
+          and `o`.`position` like concat(#{position}, '%')
+          and `p`.`place` like concat(#{place}, '%')
+          and (`o`.`tag1` like concat(#{tag1}, '%') or
+               `o`.`tag2` like concat(#{tag1}, '%') or
+               `o`.`tag3` like concat(#{tag1}, '%'))
+          and (`o`.`tag1` like concat(#{tag2}, '%') or
+               `o`.`tag2` like concat(#{tag2}, '%') or
+               `o`.`tag3` like concat(#{tag2}, '%'))
+          and (`o`.`tag1` like concat(#{tag3}, '%') or
+               `o`.`tag2` like concat(#{tag3}, '%') or
+               `o`.`tag3` like concat(#{tag3}, '%'))
         order by `o`.`rank` desc
     </select>
 
@@ -41,17 +41,17 @@
         from `pmss`.`operators` as `o`
                  left join `pmss`.`positions` as `p` on `p`.`code` = `o`.`position`
         where `o`.`rank` = #{rank}
-          and `o`.`position` like concat('%', #{position}, '%')
-          and `p`.`place` like concat('%', #{place}, '%')
-          and (`o`.`tag1` like concat('%', #{tag1}, '%') or
-               `o`.`tag2` like concat('%', #{tag1}, '%') or
-               `o`.`tag3` like concat('%', #{tag1}, '%'))
-          and (`o`.`tag1` like concat('%', #{tag2}, '%') or
-               `o`.`tag2` like concat('%', #{tag2}, '%') or
-               `o`.`tag3` like concat('%', #{tag2}, '%'))
-          and (`o`.`tag1` like concat('%', #{tag3}, '%') or
-               `o`.`tag2` like concat('%', #{tag3}, '%') or
-               `o`.`tag3` like concat('%', #{tag3}, '%'))
+          and `o`.`position` like concat(#{position}, '%')
+          and `p`.`place` like concat(#{place}, '%')
+          and (`o`.`tag1` like concat(#{tag1}, '%') or
+               `o`.`tag2` like concat(#{tag1}, '%') or
+               `o`.`tag3` like concat(#{tag1}, '%'))
+          and (`o`.`tag1` like concat(#{tag2}, '%') or
+               `o`.`tag2` like concat(#{tag2}, '%') or
+               `o`.`tag3` like concat(#{tag2}, '%'))
+          and (`o`.`tag1` like concat(#{tag3}, '%') or
+               `o`.`tag2` like concat(#{tag3}, '%') or
+               `o`.`tag3` like concat(#{tag3}, '%'))
         order by `o`.`rank` desc
     </select>
 </mapper>

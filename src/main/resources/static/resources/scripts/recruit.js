@@ -2,7 +2,7 @@ const position = document.getElementById('position');
 const place = document.getElementById('place');
 const rank = document.getElementById('rank');
 const tag = document.getElementById('tag');
-const searchForm = document.querySelector('main > form[method="post"]');
+const searchForm = document.querySelector('main > section > form[method="post"]');
 
 function submitForm() {
     let total = document.querySelectorAll('input:checked').length;
@@ -13,7 +13,7 @@ function submitForm() {
 
 function checkPosition() {
     let checkedPositions = "";
-    document.querySelectorAll('main > form > table.tags > tbody > tr.position > td > span > input:checked').forEach(checked => {
+    document.querySelectorAll('main > section > form > table.tags > tbody > tr.position > td > span > input:checked').forEach(checked => {
         checkedPositions = checkedPositions + checked.id + " ";
     });
     position.value = checkedPositions;
@@ -22,7 +22,7 @@ function checkPosition() {
 
 function checkPlace() {
     let checkedPlaces = "";
-    document.querySelectorAll('main > form > table.tags > tbody > tr.place > td > span > input:checked').forEach(checked => {
+    document.querySelectorAll('main > section > form > table.tags > tbody > tr.place > td > span > input:checked').forEach(checked => {
         checkedPlaces = checkedPlaces + checked.id + " ";
     });
     place.value = checkedPlaces;
@@ -31,7 +31,7 @@ function checkPlace() {
 
 function checkRank() {
     let checkedRank = "";
-    document.querySelectorAll('main > form > table.tags > tbody > tr.rank > td > span > input:checked').forEach(checked => {
+    document.querySelectorAll('main > section > form > table.tags > tbody > tr.rank > td > span > input:checked').forEach(checked => {
         checkedRank = checkedRank + checked.id + " ";
     });
     rank.value = checkedRank;
@@ -40,7 +40,7 @@ function checkRank() {
 
 function checkTag() {
     let checkedTag = "";
-    document.querySelectorAll('main > form > table.tags > tbody > tr.tags > td > span > input:checked').forEach(checked => {
+    document.querySelectorAll('main > section > form > table.tags > tbody > tr.tags > td > span > input:checked').forEach(checked => {
         checkedTag = checkedTag + checked.id + " ";
     });
     tag.value = checkedTag;

@@ -5,24 +5,32 @@ main {
     justify-content: flex-start;
 }
 
-main > form > table.tags {
-    background-color: #202020;
+main > section {
+    width: 50vw;
+}
+
+main > section > form {
+    width: 100%;
+}
+
+main > section > form > table.tags {
+    width: 100%;
+    background-color: #1f1f1f;
     border-radius: 0.25rem;
     margin-bottom: 1rem;
-    max-width: 95vw;
     user-select: none;
 }
 
-main > form > table.tags > tbody > tr:not(.buttons) {
+main > section > form > table.tags > tbody > tr:not(.buttons) {
     line-height: 225%;
 }
 
-main > form > table.tags > tbody > tr > th {
+main > section > form > table.tags > tbody > tr > th {
     padding: 0 0.5rem;
 }
 
-main > form > table.tags > tbody > tr > td > span > label {
-    background-color: #a9a9a9;
+main > section > form > table.tags > tbody > tr > td > span > label {
+    background-color: #bfbfbf;
     border-radius: 0.1rem;
     box-sizing: border-box;
     font-size: 0.9rem;
@@ -30,16 +38,16 @@ main > form > table.tags > tbody > tr > td > span > label {
     transition-duration: 150ms;
 }
 
-main > form > table.tags > tbody > tr > td > span > label:hover {
-    background-color: #7e7e7e;
+main > section > form > table.tags > tbody > tr > td > span > label:hover {
+    background-color: #7f7f7f;
     transition-duration: 150ms;
 }
 
-main > form > table.tags > tbody > tr > td > span > input:checked + label {
+main > section > form > table.tags > tbody > tr > td > span > input:checked + label {
     background-color: #00bfff;
 }
 
-main > form > table.tags > tbody > tr.buttons > td > div {
+main > section > form > table.tags > tbody > tr.buttons > td > div {
     text-align: center;
     border-radius: 0.25rem;
     font-weight: 700;
@@ -47,79 +55,95 @@ main > form > table.tags > tbody > tr.buttons > td > div {
     padding: 0.375rem 0;
 }
 
-main > form > table.tags > tbody > tr.buttons > td > div.reset {
+main > section > form > table.tags > tbody > tr.buttons > td > div.reset {
     background-color: #dc143c;
     cursor: pointer;
     transition-duration: 150ms;
 }
 
-main > form > table.tags > tbody > tr.buttons > td > div.reset:hover {
+main > section > form > table.tags > tbody > tr.buttons > td > div.reset:hover {
     background-color: #a50f2d;
     transition-duration: 150ms;
 }
 
-main > form > table.tags > tbody > tr.buttons > td > div.search {
+main > section > form > table.tags > tbody > tr.buttons > td > div.search {
     background-color: #1e90ff;
     cursor: pointer;
     transition-duration: 150ms;
 }
 
-main > form > table.tags > tbody > tr.buttons > td > div.search:hover {
+main > section > form > table.tags > tbody > tr.buttons > td > div.search:hover {
     background-color: #166cbf;
     transition-duration: 150ms;
 }
 
-main > table.result {
-    background-color: #202020;
+main > section > div.result {
+    background-color: #1f1f1f;
     border-radius: 0.25rem;
-    max-width: 95vw;
+    box-sizing: border-box;
     padding: 0.25rem;
     user-select: none;
 }
 
-main > table.result > tbody > tr {
+main > section > div.result > table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+main > section > div.result > table > tbody > tr {
     line-height: 225%;
 }
 
-main > table.result > tbody > tr > td > span {
+main > section > div.result > table > tbody > tr:not(:last-child) {
+    border-bottom: solid 0.1rem #3f3f3f;
+}
+
+main > section > div.result > table > tbody > tr > td > span {
     border-radius: 0.1rem;
     box-sizing: border-box;
     font-size: 0.9rem;
     padding: 0.375rem;
 }
 
-main > table.result > tbody > tr > td.tags {
+main > section > div.result > table > tbody > tr > td.tags {
+    width: 7.5rem;
     padding-right: 1rem;
 }
 
-main > table.result > tbody > tr > td.tags > span {
-    background-color: #a9a9a9;
+main > section > div.result > table > tbody > tr > td.tags > span {
+    background-color: #7f7f7f;
 }
 
-main > table.result > tbody > tr > td.operators {
+main > section > div.result > table > tbody > tr > td.operators {
     color: #000000;
 }
 
-main > table.result > tbody > tr > td.operators > span[rank='6'] {
+main > section > div.result > table > tbody > tr > td.operators > span[rank='6'] {
     background-color: #ff6600;
 }
 
-main > table.result > tbody > tr > td.operators > span[rank='5'] {
+main > section > div.result > table > tbody > tr > td.operators > span[rank='5'] {
     background-color: #ffae00;
 }
 
-main > table.result > tbody > tr > td.operators > span[rank='4'] {
+main > section > div.result > table > tbody > tr > td.operators > span[rank='4'] {
     background-color: #dbaedb;
 }
 
-main > table.result > tbody > tr > td.operators > span[rank='3'] {
+main > section > div.result > table > tbody > tr > td.operators > span[rank='3'] {
     background-color: #00b2f6;
 }
 
-main > table.result > tbody > tr > td.operators > span[rank='2'] {
+main > section > div.result > table > tbody > tr > td.operators > span[rank='2'] {
     background-color: #dce537;
 }
 
-main > table.result > tbody > tr > td.operators > span[rank='1'] {
+main > section > div.result > table > tbody > tr > td.operators > span[rank='1'] {
     background-color: #9f9f9f;
+}
+
+@media (max-width: 50rem) {
+    main > section  {
+        width: 95vw;
+    }
 }

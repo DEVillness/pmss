@@ -18,6 +18,7 @@
 <body>
 <%@ include file="/WEB-INF/views/header.jsp" %>
 <main>
+    <section>
     <form method="post">
         <table class="tags">
             <tbody>
@@ -83,31 +84,34 @@
         </table>
     </form>
     <c:if test="${operators != null}">
-        <table class="result">
-            <thead>
-            <tr>
-                <th>태그</th>
-                <th>오퍼레이터</th>
-            </tr>
-            </thead>
-            <tbody>
-            <c:forEach var="index" items="${operators}">
+        <div class="result">
+            <table>
+                <thead>
                 <tr>
-                    <td class="tags">
-                        <c:forEach var="tag" items="${index.key}">
-                            <span><nobr>${tag}</nobr></span>
-                        </c:forEach>
-                    </td>
-                    <td class="operators">
-                        <c:forEach var="operator" items="${index.value}">
-                            <span rank="${operator.rank}"><nobr>${operator.name}</nobr></span>
-                        </c:forEach>
-                    </td>
+                    <th>태그</th>
+                    <th>오퍼레이터</th>
                 </tr>
-            </c:forEach>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                <c:forEach var="index" items="${operators}">
+                    <tr>
+                        <td class="tags">
+                            <c:forEach var="tag" items="${index.key}">
+                                <span><nobr>${tag}</nobr></span>
+                            </c:forEach>
+                        </td>
+                        <td class="operators">
+                            <c:forEach var="operator" items="${index.value}">
+                                <span rank="${operator.rank}"><nobr>${operator.name}</nobr></span>
+                            </c:forEach>
+                        </td>
+                    </tr>
+                </c:forEach>
+                </tbody>
+            </table>
+        </div>
     </c:if>
+    </section>
 </main>
 </body>
 </html>

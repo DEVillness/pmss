@@ -1,10 +1,10 @@
 main > section.rank {
-    border-bottom: solid 0.1rem #a9a9a9;
+    border-bottom: solid 0.1rem #bfbfbf;
     margin: 1rem;
 }
 
 main > section.rank > div.commodity {
-    background-color: #7e7e7e;
+    background-color: #7f7f7f;
     border-radius: 1rem;
     display: inline-flex;
     flex-direction: row;
