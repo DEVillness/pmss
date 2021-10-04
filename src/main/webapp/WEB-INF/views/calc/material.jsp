@@ -17,7 +17,16 @@
 <%@ include file="/WEB-INF/views/header.jsp" %>
 <main>
     <section class="control">
-        <div onclick="resetForm()">초기화</div>
+        <div>
+            <input id="rankSelector5" hidden type="checkbox" checked><label for="rankSelector5" class="rank">★5</label>
+            <input id="rankSelector4" hidden type="checkbox" checked><label for="rankSelector4" class="rank">★4</label>
+            <input id="rankSelector3" hidden type="checkbox" checked><label for="rankSelector3" class="rank">★3</label>
+            <input id="rankSelector2" hidden type="checkbox" checked><label for="rankSelector2" class="rank">★2</label>
+            <input id="rankSelector1" hidden type="checkbox" checked><label for="rankSelector1" class="rank">★1</label>
+        </div>
+        <div>
+            <label class="reset">초기화</label>
+        </div>
     </section>
     <section class="calc">
         <form>

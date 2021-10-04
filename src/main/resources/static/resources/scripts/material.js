@@ -1,6 +1,4 @@
-const inputs = document.querySelectorAll('main > section.calc > form > section.rank > div.commodity > div > input');
-const calcForm = document.querySelector('main > section.calc > form');
-
+// calculation functions
 const d32Input = document.getElementById('d32').querySelectorAll('input');
 const bipolarInput = document.getElementById('bipolar').querySelectorAll('input');
 const polymerizerInput = document.getElementById('polymerizer').querySelectorAll('input');
@@ -44,7 +42,7 @@ const ester1Input = document.getElementById('ester1').querySelectorAll('input');
 const sugar1Input = document.getElementById('sugar1').querySelectorAll('input');
 const orirock1Input = document.getElementById('orirock1').querySelectorAll('input');
 
-inputs.forEach(i => {
+document.querySelectorAll('main > section.calc > form > section.rank > div.commodity > div > input').forEach(i => {
     i.onchange = refresh;
 });
 
@@ -91,12 +89,82 @@ function refresh() {
     ester1Input[2].value = positive(Number(ester1Input[0].value) - Number(ester1Input[1].value) + Number(ester2Input[2].value) * 3);
     sugar1Input[2].value = positive(Number(sugar1Input[0].value) - Number(sugar1Input[1].value) + Number(sugar2Input[2].value) * 3);
     orirock1Input[2].value = positive(Number(orirock1Input[0].value) - Number(orirock1Input[1].value) + Number(orirock2Input[2].value) * 3);
-}
 
-function resetForm() {
-    calcForm.reset();
+    lackStyle();
 }
 
 function positive(val) {
     return String(val <= 0 ? 0 : val);
+}
+
+// reset calc
+const calcForm = document.querySelector('main > section.calc > form');
+document.querySelector('main > section.control > div > label.reset').onclick = () => {
+    calcForm.reset();
+    lackStyle();
+}
+
+// set lack input style
+function lackStyle() {
+    document.querySelectorAll('main > section.calc > form > section.rank > div.commodity > div > input:last-child').forEach(lack => {
+        if (Number(lack.value) > 0) {
+            lack.style.backgroundColor = '#7f0000';
+            lack.style.color = '#ffffff';
+        } else {
+            lack.style.backgroundColor = '#ffffff';
+            lack.style.color = '#6d6d6d';
+        }
+    });
+}
+
+// hide unselected rank
+const rankSelector1 = document.getElementById('rankSelector1');
+const rankSelector2 = document.getElementById('rankSelector2');
+const rankSelector3 = document.getElementById('rankSelector3');
+const rankSelector4 = document.getElementById('rankSelector4');
+const rankSelector5 = document.getElementById('rankSelector5');
+const rank1 = document.getElementById('rank1')
+const rank2 = document.getElementById('rank2')
+const rank3 = document.getElementById('rank3')
+const rank4 = document.getElementById('rank4')
+const rank5 = document.getElementById('rank5')
+
+rankSelector5.onchange = () => {
+    if (rankSelector5.checked) {
+        rank5.removeAttribute('hidden');
+    } else {
+        rank5.setAttribute('hidden','');
+    }
+}
+
+rankSelector4.onchange = () => {
+    if (rankSelector4.checked) {
+        rank4.removeAttribute('hidden');
+    } else {
+        rank4.setAttribute('hidden','');
+    }
+}
+
+rankSelector3.onchange = () => {
+    if (rankSelector3.checked) {
+        rank3.removeAttribute('hidden');
+    } else {
+        rank3.setAttribute('hidden','');
+    }
+}
+
+rankSelector2.onchange = () => {
+    if (rankSelector2.checked) {
+        rank2.removeAttribute('hidden');
+    } else {
+        rank2.setAttribute('hidden','');
+    }
+}
+
+rankSelector1.onchange = () => {
+    if (rankSelector1.checked) {
+        rank1.removeAttribute('hidden');
+    } else {
+        rank1.setAttribute('hidden','');
+    }
 }

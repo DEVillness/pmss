@@ -3,23 +3,66 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    user-select: none;
 }
 
 main > section {
     width: 50vw;
+    max-width: 50rem;
+    min-width: 37rem;
 }
 
-main > section.calc {
+main > section.control {
+    margin-bottom: 1rem;
     background-color: #1f1f1f;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+}
+
+main > section.control > div > label {
+    display: inline-block;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition-duration: 100ms;
+}
+
+main > section.control > div > label.rank {
+    background-color: #bfbfbf;
+}
+
+main > section.control > div > label.rank:hover {
+    background-color: #7f7f7f;
+}
+
+main > section.control > div > input:checked + label.rank {
+    background-color: #00bfff;
+}
+
+main > section.control > div > input:checked + label.rank:hover {
+    background-color: #005f7f;
+}
+
+main > section.control > div > label.reset {
+    background-color: #00bfff;
+}
+
+main > section.control > div > label.reset:hover {
+    background-color: #005f7f;
 }
 
 main > section.calc > form {
     margin: 0;
 }
 
-main > section.calc > form > section.rank:not(:last-child) {
-    border-bottom: solid 0.1rem #bfbfbf;
+main > section.calc > form > section.rank {
+    background-color: #1f1f1f;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
 }
 
 main > section.calc > form > section.rank > div.commodity {
@@ -49,18 +92,21 @@ main > section.calc > form > section.rank > div.commodity > div.image {
 
 main > section.calc > form > section.rank > div.commodity > div > input {
     width: 4rem;
-}
-
-main > section.calc > form > section.rank > div.commodity > div > input[disabled='disabled'] {
+    height: 1.25rem;
     background-color: #ffffff;
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0 0.125rem;
+    text-align: center;
 }
 
 main > section.calc > form > section.rank > div.commodity > div > input:not(:last-child) {
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
 }
 
-@media (max-width: 50rem) {
+@media (max-width: 40rem) {
     main > section  {
         width: 90vw;
+        min-width: auto;
     }
 }
