@@ -74,3 +74,50 @@ function countCheck() {
         });
     }
 }
+
+const rows = document.querySelectorAll('main > section > div.result > table > tbody > tr');
+rows.forEach(row => {
+    let operators = row.querySelectorAll('td.operators > span');
+    let tags = row.querySelectorAll('td.tags > span');
+    let minRank = 6;
+    operators.forEach(operator => {
+        if (Number(operator.getAttribute('rank')) < minRank && Number(operator.getAttribute('rank')) !== 1) {
+            minRank = Number(operator.getAttribute('rank'));
+        }
+    })
+    if (minRank === 2 || minRank === 3) {
+        minRank = Number(operators[operators.length - 1].getAttribute('rank'))
+    }
+    switch (minRank) {
+        case 6:
+            tags.forEach(tag => {
+                tag.style.backgroundColor = "#ff6600";
+                tag.style.color = "#000000";
+            })
+            break;
+        case 5:
+            tags.forEach(tag => {
+                tag.style.backgroundColor = "#ffae00";
+                tag.style.color = "#000000";
+            })
+            break;
+        case 4:
+            tags.forEach(tag => {
+                tag.style.backgroundColor = "#dbaedb";
+                tag.style.color = "#000000";
+            })
+            break;
+        case 1:
+            tags.forEach(tag => {
+                tag.style.backgroundColor = "#ffffff";
+                tag.style.color = "#000000";
+            })
+            break;
+    }
+    if (Number(operators[0].getAttribute('rank')) === 1) {
+        tags.forEach(tag => {
+            tag.style.backgroundColor = "#000000";
+            tag.style.color = "#ffffff";
+        })
+    }
+});

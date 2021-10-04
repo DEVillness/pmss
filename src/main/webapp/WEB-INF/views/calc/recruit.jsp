@@ -109,7 +109,6 @@
                 </c:forEach>
                 </tbody>
             </table>
-        </div>
     </c:if>
     </section>
 </main>

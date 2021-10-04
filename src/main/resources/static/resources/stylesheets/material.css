@@ -9,11 +9,20 @@ main > section {
     width: 50vw;
 }
 
-main > section.calc > section.rank {
+main > section.calc {
+    background-color: #1f1f1f;
+    border-radius: 1rem;
+}
+
+main > section.calc > form {
+    margin: 0;
+}
+
+main > section.calc > form > section.rank:not(:last-child) {
     border-bottom: solid 0.1rem #bfbfbf;
 }
 
-main > section.calc > section.rank > div.commodity {
+main > section.calc > form > section.rank > div.commodity {
     background-color: #7f7f7f;
     border-radius: 1rem;
     display: inline-flex;
@@ -24,29 +33,29 @@ main > section.calc > section.rank > div.commodity {
     justify-content: space-evenly;
 }
 
-main > section.calc > section.rank > div.commodity > div {
+main > section.calc > form > section.rank > div.commodity > div {
     align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-main > section.calc > section.rank > div.commodity > div.image {
+main > section.calc > form > section.rank > div.commodity > div.image {
     width: 50px;
     height: 50px;
     margin-right: 1rem;
     align-self: center;
 }
 
-main > section.calc > section.rank > div.commodity > div > input {
+main > section.calc > form > section.rank > div.commodity > div > input {
     width: 4rem;
 }
 
-main > section.calc > section.rank > div.commodity > div > input[disabled='disabled'] {
+main > section.calc > form > section.rank > div.commodity > div > input[disabled='disabled'] {
     background-color: #ffffff;
 }
 
-main > section.calc > section.rank > div.commodity > div > input:not(:last-child) {
+main > section.calc > form > section.rank > div.commodity > div > input:not(:last-child) {
     margin-bottom: 0.25rem;
 }
 

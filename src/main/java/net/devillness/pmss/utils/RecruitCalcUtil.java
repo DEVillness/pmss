@@ -44,40 +44,86 @@ public class RecruitCalcUtil {
     }
 
     private static final Comparator<OperatorEntity[]> cmp = (o1, o2) -> {
-        int o1min = 6;
-        int o2min = 6;
-        for(OperatorEntity o : o1) {
-            if(o.getRank() != 1) {
-                if (o.getRank() < o1min) {
-                    o1min = o.getRank();
-                }
-            }
-        }
-        for(OperatorEntity o : o2) {
-            if (o.getRank() != 1) {
-                if (o.getRank() < o2min) {
-                    o2min = o.getRank();
-                }
-            }
-        }
-        if (o1min == o2min) {
+        int o1Min = 6;
+        boolean o1One = false;
+        if (o1[0].getRank() == 1) {
+            o1Min = 1;
+            o1One = true;
+        } else {
             for(OperatorEntity o : o1) {
-                if (o.getRank() == 1) {
-                    for(OperatorEntity p : o2) {
-                        if (p.getRank() == 1) {
+                if(o.getRank() != 1 && o.getRank() < o1Min) {
+                    o1Min = o.getRank();
+                }
+            }
+            if (o1[o1.length-1].getRank() == 1) {
+                o1One = true;
+            }
+        }
+
+        int o2Min = 6;
+        boolean o2One = false;
+        if (o2[0].getRank() == 1) {
+            o2Min = 1;
+            o1One = true;
+        } else {
+            for(OperatorEntity o : o2) {
+                if (o.getRank() != 1 && o.getRank() < o2Min) {
+                    o2Min = o.getRank();
+                }
+            }
+            if (o2[o2.length-1].getRank() == 1) {
+                o2One = true;
+            }
+        }
+
+        if (o1Min == 1 || o2Min == 1) {
+            if (o1Min == o2Min) {
+                return 0;
+            } else if (o1Min > 3 || o2Min > 3) {
+                return Integer.compare(o2Min, o1Min);
+            } else {
+                return Integer.compare(o1Min, o2Min);
+            }
+        } else if (o1Min > 3) {
+            if (o2Min > 3) {
+                if (o1Min == o2Min) {
+                    if (o1One) {
+                        if (o2One) {
+                            return 0;
+                        } else {
+                            return 1;
+                        }
+                    } else {
+                        if (o2One) {
+                            return -1;
+                        } else {
                             return 0;
                         }
                     }
-                    return 1;
+                } else {
+                    return Integer.compare(o2Min, o1Min);
+                }
+            } else {
+                return -1;
+            }
+        } else {
+            if (o2Min > 3) {
+                return 1;
+            } else {
+                if (o1One) {
+                    if (o2One) {
+                        return Integer.compare(o2Min, o1Min);
+                    } else {
+                        return -1;
+                    }
+                } else {
+                    if (o2One) {
+                        return 1;
+                    } else {
+                        return Integer.compare(o2Min, o1Min);
+                    }
                 }
             }
-            for(OperatorEntity o : o2) {
-                if (o.getRank() == 1) {
-                    return -1;
-                }
-            }
-            return 0;
         }
-        return Integer.compare(o2min, o1min);
     };
 }
