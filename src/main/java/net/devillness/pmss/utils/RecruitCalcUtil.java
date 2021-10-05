@@ -44,9 +44,10 @@ public class RecruitCalcUtil {
     }
 
     private static final Comparator<OperatorEntity[]> cmp = (o1, o2) -> {
+        int o1Max = o1[0].getRank();
         int o1Min = 6;
         boolean o1One = false;
-        if (o1[0].getRank() == 1) {
+        if (o1Max == 1) {
             o1Min = 1;
             o1One = true;
         } else {
@@ -60,9 +61,10 @@ public class RecruitCalcUtil {
             }
         }
 
+        int o2Max = o2[0].getRank();
         int o2Min = 6;
         boolean o2One = false;
-        if (o2[0].getRank() == 1) {
+        if (o2Max == 1) {
             o2Min = 1;
             o1One = true;
         } else {
@@ -76,8 +78,8 @@ public class RecruitCalcUtil {
             }
         }
 
-        if (o1Min == 1 || o2Min == 1) {
-            if (o1Min == o2Min) {
+        if (o1Max == 1 || o2Max == 1) {
+            if (o1Max == o2Max) {
                 return 0;
             } else if (o1Min > 3 || o2Min > 3) {
                 return Integer.compare(o2Min, o1Min);
@@ -87,18 +89,14 @@ public class RecruitCalcUtil {
         } else if (o1Min > 3) {
             if (o2Min > 3) {
                 if (o1Min == o2Min) {
-                    if (o1One) {
-                        if (o2One) {
+                    if (o1Max == o2Max) {
+                        if (o1One == o2One) {
                             return 0;
                         } else {
-                            return 1;
+                            return Boolean.compare(o1One, o2One);
                         }
                     } else {
-                        if (o2One) {
-                            return -1;
-                        } else {
-                            return 0;
-                        }
+                        return Integer.compare(o2Max, o1Max);
                     }
                 } else {
                     return Integer.compare(o2Min, o1Min);
@@ -110,18 +108,10 @@ public class RecruitCalcUtil {
             if (o2Min > 3) {
                 return 1;
             } else {
-                if (o1One) {
-                    if (o2One) {
-                        return Integer.compare(o2Min, o1Min);
-                    } else {
-                        return -1;
-                    }
+                if (o1One == o2One) {
+                    return Integer.compare(o2Min, o1Min);
                 } else {
-                    if (o2One) {
-                        return 1;
-                    } else {
-                        return Integer.compare(o2Min, o1Min);
-                    }
+                    return Boolean.compare(o2One, o1One);
                 }
             }
         }
