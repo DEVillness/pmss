@@ -37,8 +37,8 @@ public class RecruitCalcUtil {
         return result;
     }
 
-    public static LinkedHashMap<ArrayList<String>, OperatorEntity[]> sortOperators(LinkedHashMap<ArrayList<String>, OperatorEntity[]> operators) {
-        LinkedHashMap<ArrayList<String>, OperatorEntity[]> sortedMap = new LinkedHashMap<>();
+    public static LinkedHashMap<String[], OperatorEntity[]> sortOperators(LinkedHashMap<String[], OperatorEntity[]> operators) {
+        LinkedHashMap<String[], OperatorEntity[]> sortedMap = new LinkedHashMap<>();
         operators.entrySet().stream().sorted(Map.Entry.comparingByValue(cmp)).forEachOrdered(x -> sortedMap.put(x.getKey(), x.getValue()));
         return sortedMap;
     }
