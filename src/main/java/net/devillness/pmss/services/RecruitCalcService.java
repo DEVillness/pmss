@@ -148,8 +148,9 @@ public class RecruitCalcService {
             selectors.addAll(Arrays.asList(tagArray));
         }
 
+        String[] selectorArr = selectors.toArray(new String[0]);
         if (selectResult.length != 0) {
-            recruitVo.appendOperators(selectors, selectResult);
+            recruitVo.appendOperators(selectorArr, selectResult);
         }
     }
 }

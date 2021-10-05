@@ -2,7 +2,6 @@ package net.devillness.pmss.vos;
 
 import net.devillness.pmss.entities.OperatorEntity;
 
-import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
 public class RecruitVo {
@@ -10,7 +9,7 @@ public class RecruitVo {
     private String place;
     private String rank;
     private String tag;
-    private LinkedHashMap<ArrayList<String>, OperatorEntity[]> operators = new LinkedHashMap<>();
+    private LinkedHashMap<String[], OperatorEntity[]> operators = new LinkedHashMap<>();
 
     public String getPosition() {
         return position;
@@ -44,15 +43,15 @@ public class RecruitVo {
         this.tag = tag;
     }
 
-    public LinkedHashMap<ArrayList<String>, OperatorEntity[]> getOperators() {
+    public LinkedHashMap<String[], OperatorEntity[]> getOperators() {
         return operators;
     }
 
-    public void setOperators(LinkedHashMap<ArrayList<String>, OperatorEntity[]> operators) {
+    public void setOperators(LinkedHashMap<String[], OperatorEntity[]> operators) {
         this.operators = operators;
     }
 
-    public void appendOperators(ArrayList<String> tagArray, OperatorEntity[] operators) {
+    public void appendOperators(String[] tagArray, OperatorEntity[] operators) {
         this.operators.put(tagArray, operators);
     }
 }
