@@ -7,6 +7,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -34,21 +35,27 @@ public class RecruitCalcController {
                               HttpServletRequest request) {
         this.recruitCalcService.recruitCalculator(recruitVo);
         request.setAttribute("operators", recruitVo.getOperators());
-        return "calc/recruit";
+        return "calc/recruitNoAjax";
     }
 
     @ResponseBody
     @RequestMapping(value = "/calc", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-    public String recruitCalcPost(RecruitVo recruitVo) {
-        this.recruitCalcService.recruitCalculator(recruitVo);
+    public String recruitCalcPost(@RequestBody RecruitVo recruitVo) {
+//        if (recruitVo.getPosition() == null &&
+//                recruitVo.getPlace() == null &&
+//                recruitVo.getRank() == null &&
+//                recruitVo.getTag() == null) {
+//            return null;
+//        }
 
+        this.recruitCalcService.recruitCalculator(recruitVo);
         LinkedHashMap<String[], OperatorEntity[]> operators = recruitVo.getOperators();
         JSONArray responseJson = new JSONArray();
 
-        operators.forEach((tags, os) -> {
+        operators.forEach((tags, ops) -> {
             JSONObject itemJson = new JSONObject();
             JSONArray tagsJson = new JSONArray(tags);
-            JSONArray operatorsJson = new JSONArray(Arrays.stream(os).map(operatorEntity -> {
+            JSONArray operatorsJson = new JSONArray(Arrays.stream(ops).map(operatorEntity -> {
                 JSONObject operatorJson = new JSONObject();
                 operatorJson.put("name", operatorEntity.getName());
                 operatorJson.put("rank", operatorEntity.getRank());

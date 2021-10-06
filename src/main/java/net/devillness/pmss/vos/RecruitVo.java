@@ -1,5 +1,6 @@
 package net.devillness.pmss.vos;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import net.devillness.pmss.entities.OperatorEntity;
 
 import java.util.LinkedHashMap;
@@ -9,6 +10,7 @@ public class RecruitVo {
     private String place;
     private String rank;
     private String tag;
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private LinkedHashMap<String[], OperatorEntity[]> operators = new LinkedHashMap<>();
 
     public String getPosition() {

@@ -147,3 +147,7 @@ main > section > div.result > table > tbody > tr > td.operators > span[rank='1']
         width: 95vw;
     }
 }
+/*
+TODO: 다크 모드 추가
+ https://velog.io/@jeky22/%EC%9B%B9-%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C-%EA%B3%BC%EC%A0%9C-with-vanillaJS-1
+*/

@@ -49,6 +49,7 @@ document.querySelectorAll('body > main > section > form > table.tags > tbody > t
 });
 
 // reset selected tags
+const searchForm = document.querySelector('main > section > form[method="post"]');
 document.querySelector('body > main > section > form > table.tags > tbody > tr.buttons > td > div.reset').onclick = () => {
     let total = document.querySelectorAll('input:checked').length;
     if (total !== 0) {
@@ -62,11 +63,11 @@ document.querySelector('body > main > section > form > table.tags > tbody > tr.b
 };
 
 // search with selected tags
-const searchForm = document.querySelector('main > section > form[method="post"]');
 document.querySelector('body > main > section > form > table.tags > tbody > tr.buttons > td > div.search').onclick = () => {
     let total = document.querySelectorAll('input:checked').length;
     if (total !== 0) {
-        searchForm.submit();
+        // searchForm.submit();
+        requestAjax();
     }
 };
 
@@ -90,14 +91,14 @@ function countCheck() {
 
 // highlight tags with preferred result
 document.querySelectorAll('main > section > div.result > table > tbody > tr').forEach(row => {
-    let operators = row.querySelectorAll('td.operators > span');
-    let tags = row.querySelectorAll('td.tags > span');
+    let operators = row.querySelectorAll(':scope > td.operators > span');
+    let tags = row.querySelectorAll(':scope > td.tags > span');
     let minRank = 6;
     operators.forEach(operator => {
         if (Number(operator.getAttribute('rank')) < minRank && Number(operator.getAttribute('rank')) !== 1) {
             minRank = Number(operator.getAttribute('rank'));
         }
-    })
+    });
     if (minRank === 2 || minRank === 3) {
         minRank = Number(operators[operators.length - 1].getAttribute('rank'))
     }
