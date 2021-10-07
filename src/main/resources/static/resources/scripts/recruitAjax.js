@@ -9,14 +9,13 @@ function requestAjax() {
             'tag': tag.value === null ? " " : tag.value
         }
     }, (status, responseText) => {
-        const responseJson = JSON.parse(responseText);
-        const table = window.document.querySelector('main > section > div.result > table > tbody');
+        let responseJson = JSON.parse(responseText);
         responseJson.forEach(rowData => {
             let tr = createTableRow(rowData);
-            table.append(tr);
+            resultTableBody.append(tr);
         });
     }, (status) => {
-        alert(`서버와의 통신에서 [${status}] 오류가 발생하였습니다.`);
+        alert(`[${status}] 서버와의 통신에서 오류가 발생하였습니다.`);
     });
 }
 
