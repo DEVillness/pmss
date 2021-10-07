@@ -42,7 +42,7 @@ main > section:active {
 main > section.material {
     right: 0;
     clip-path: polygon(40% 0, 100% 0%, 100% 100%, 0 100%);
-    background-image: url('../images/material2.jpg');
+    background-image: url('../images/material.jpg');
     background-position-x: center;
 }
 

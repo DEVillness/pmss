@@ -35,18 +35,12 @@ public class RecruitCalcController {
                               HttpServletRequest request) {
         this.recruitCalcService.recruitCalculator(recruitVo);
         request.setAttribute("operators", recruitVo.getOperators());
-        return "calc/recruitNoAjax";
+        return "calc/recruit";
     }
 
     @ResponseBody
     @RequestMapping(value = "/calc", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public String recruitCalcPost(@RequestBody RecruitVo recruitVo) {
-//        if (recruitVo.getPosition() == null &&
-//                recruitVo.getPlace() == null &&
-//                recruitVo.getRank() == null &&
-//                recruitVo.getTag() == null) {
-//            return null;
-//        }
 
         this.recruitCalcService.recruitCalculator(recruitVo);
         LinkedHashMap<String[], OperatorEntity[]> operators = recruitVo.getOperators();

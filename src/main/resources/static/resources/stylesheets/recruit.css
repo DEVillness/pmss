@@ -15,7 +15,7 @@ main > section > form {
 
 main > section > form > table.tags {
     width: 100%;
-    background-color: #1f1f1f;
+    background-color: var(--color-dark-level-5);
     border-radius: 0.25rem;
     margin-bottom: 1rem;
     user-select: none;
@@ -26,20 +26,22 @@ main > section > form > table.tags > tbody > tr:not(.buttons) {
 }
 
 main > section > form > table.tags > tbody > tr > th {
+    color: var(--color-dark-level-0);
     padding: 0 0.5rem;
 }
 
 main > section > form > table.tags > tbody > tr > td > span > label {
-    background-color: #bfbfbf;
+    background-color: #7f7f7f;
     border-radius: 0.1rem;
     box-sizing: border-box;
+    color: #ffffff;
     font-size: 0.9rem;
     padding: 0.375rem;
     transition-duration: 150ms;
 }
 
 main > section > form > table.tags > tbody > tr > td > span > label:hover {
-    background-color: #7f7f7f;
+    background-color: #3f3f3f;
     transition-duration: 150ms;
 }
 
@@ -47,9 +49,14 @@ main > section > form > table.tags > tbody > tr > td > span > input:checked + la
     background-color: #00bfff;
 }
 
+main > section > form > table.tags > tbody > tr > td > span > input:checked + label:hover {
+    background-color: #005f7f;
+}
+
 main > section > form > table.tags > tbody > tr.buttons > td > div {
     text-align: center;
     border-radius: 0.25rem;
+    color: #ffffff;
     font-weight: 700;
     margin-top: 0.5rem;
     padding: 0.375rem 0;
@@ -78,9 +85,10 @@ main > section > form > table.tags > tbody > tr.buttons > td > div.search:hover 
 }
 
 main > section > div.result {
-    background-color: #1f1f1f;
+    background-color: var(--color-dark-level-5);
     border-radius: 0.25rem;
     box-sizing: border-box;
+    margin-bottom: 0.5rem;
     padding: 0.25rem;
     user-select: none;
 }
@@ -90,12 +98,16 @@ main > section > div.result > table {
     border-collapse: collapse;
 }
 
+main > section > div.result > table > thead {
+    color: var(--color-dark-level-0);
+}
+
 main > section > div.result > table > tbody > tr {
     line-height: 225%;
 }
 
 main > section > div.result > table > tbody > tr:not(:last-child) {
-    border-bottom: solid 0.1rem #3f3f3f;
+    border-bottom: solid 0.1rem var(--color-dark-level-3);
 }
 
 main > section > div.result > table > tbody > tr > td > span {
@@ -111,7 +123,8 @@ main > section > div.result > table > tbody > tr > td.tags {
 }
 
 main > section > div.result > table > tbody > tr > td.tags > span {
-    background-color: #7f7f7f;
+    background-color: #9f9f9f;
+    color: #ffffff;
 }
 
 main > section > div.result > table > tbody > tr > td.operators {
