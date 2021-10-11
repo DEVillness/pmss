@@ -1,16 +1,16 @@
 const darkModeButton = document.getElementById('isDark');
 const darkModeLabel = document.querySelector('header > nav > div.links > span > label > nobr');
 
-const prefersColorScheme = window.matchMedia("(prefers-color-scheme: dark)");
-darkModeButton.checked = prefersColorScheme.matches;
-
-if (darkModeButton.checked) {
-    darkModeLabel.innerText = '라이트 모드';
-} else {
-    darkModeLabel.innerText = '다크 모드';
-}
+let userTheme = window.localStorage.getItem('theme');
+const themeDark = userTheme != null ? userTheme : window.matchMedia("(prefers-color-scheme: dark)").matches ? 'dark' : 'light';
+darkModeButton.checked = themeDark === 'dark';
+darkMode();
 
 darkModeButton.addEventListener('change', () => {
+    darkMode();
+});
+
+function darkMode() {
     if (darkModeButton.checked) {
         document.documentElement.style.setProperty('--color-dark-level-0', '#ffffff');
         document.documentElement.style.setProperty('--color-dark-level-1', '#dfdfdf');
@@ -19,6 +19,7 @@ darkModeButton.addEventListener('change', () => {
         document.documentElement.style.setProperty('--color-dark-level-4', '#3f3f3f');
         document.documentElement.style.setProperty('--color-dark-level-5', '#1f1f1f');
         document.documentElement.style.setProperty('--color-dark-level-6', '#000000');
+        window.localStorage.setItem('theme', 'dark');
         darkModeLabel.innerText = '라이트 모드';
     } else {
         document.documentElement.style.setProperty('--color-dark-level-0', '#000000');
@@ -28,6 +29,7 @@ darkModeButton.addEventListener('change', () => {
         document.documentElement.style.setProperty('--color-dark-level-4', '#bfbfbf');
         document.documentElement.style.setProperty('--color-dark-level-5', '#dfdfdf');
         document.documentElement.style.setProperty('--color-dark-level-6', '#ffffff');
+        window.localStorage.setItem('theme', 'light');
         darkModeLabel.innerText = '다크 모드';
     }
-});
+}
