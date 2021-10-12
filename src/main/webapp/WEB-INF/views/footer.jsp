@@ -1,0 +1,2 @@
+<%@ page language="java" contentType="text/html" pageEncoding="UTF-8" trimDirectiveWhitespaces="true" %>
+<footer>Copyright © <a href="https://github.com/DEVillness" target="_blank">DEVillness</a>, All rights reserved.</footer>

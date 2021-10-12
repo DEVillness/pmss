@@ -1,14 +1,6 @@
-main {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    user-select: none;
-}
-
 main > section {
     width: 50vw;
-    max-width: 50rem;
+    max-width: 51rem;
     min-width: 37rem;
 }
 

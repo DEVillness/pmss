@@ -1,5 +1,5 @@
 const darkModeButton = document.getElementById('isDark');
-const darkModeLabel = document.querySelector('header > nav > div.links > span > label > nobr');
+const darkModeLabel = document.querySelector('header > nav > div.mode > span > label > nobr');
 
 let userTheme = window.localStorage.getItem('theme');
 const themeDark = userTheme != null ? userTheme : window.matchMedia("(prefers-color-scheme: dark)").matches ? 'dark' : 'light';
