@@ -7,6 +7,8 @@ target/
 src/main/resources/application.properties
 src/main/resources/application-development.properties
 /.mvn
+/.gradle
+/gradle
 
 ### STS ###
 .apt_generated
