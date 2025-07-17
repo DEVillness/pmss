@@ -9,6 +9,7 @@ src/main/resources/application-development.properties
 /.mvn
 /.gradle
 /gradle
+/out
 
 ### STS ###
 .apt_generated
