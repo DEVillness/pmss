@@ -21,6 +21,7 @@ dependencies {
     implementation 'org.mariadb.jdbc:mariadb-java-client'
     implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.0'
     implementation 'javax.servlet:javax.servlet-api:4.0.1'
+    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
     implementation 'javax.servlet:jstl:1.2'
     implementation 'org.json:json:20231013'
     providedRuntime  'org.springframework.boot:spring-boot-starter-tomcat:2.5.4'
